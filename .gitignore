@@ -1,0 +1,5 @@
+resultado_mapeo.csv
+resultado_mapeo.xlsx
+__pycache__/
+*.pyc
+.env
