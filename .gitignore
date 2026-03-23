@@ -1,5 +1,7 @@
 resultado_mapeo.csv
 resultado_mapeo.xlsx
+resultado_sanatorio.csv
+resultado_sanatorio.xlsx
 __pycache__/
 *.pyc
 .env
