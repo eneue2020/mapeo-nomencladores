@@ -2,6 +2,13 @@ resultado_mapeo.csv
 resultado_mapeo.xlsx
 resultado_sanatorio.csv
 resultado_sanatorio.xlsx
+resultado_sanatorio_nn_osmiss.csv
+resultado_sanatorio_nn_osmiss.xlsx
+resultado_sanatorio_nbu.csv
+resultado_sanatorio_nbu.xlsx
+paso1.py
+paso2.py
+paso4.py
 __pycache__/
 *.pyc
 .env
