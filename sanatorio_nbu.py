@@ -37,8 +37,8 @@ sanatorio = leer_csv('sanatorio_del_oeste.csv')
 nbu       = leer_csv('NBU.csv')
 
 nbu['CODIGO']          = nbu['CODIGO'].str.strip()
-nbu['DETERMINACIONES'] = nbu['DETERMINACIONES'].str.strip()
-dict_nbu = dict(zip(nbu['CODIGO'], nbu['DETERMINACIONES']))
+nbu['Determinaciones'] = nbu['Determinaciones'].str.strip()
+dict_nbu = dict(zip(nbu['CODIGO'], nbu['Determinaciones']))
 
 print('  sanatorio : %d filas' % len(sanatorio))
 print('  NBU       : %d entradas' % len(dict_nbu))

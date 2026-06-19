@@ -81,12 +81,12 @@ nn["C\u00f3digo Nomenclador"] = nn["C\u00f3digo Nomenclador"].str.strip()
 nn["Descripci\u00f3n"]        = nn["Descripci\u00f3n"].str.strip()
 nn_osmiss["C\u00f3digo"]      = nn_osmiss["C\u00f3digo"].str.strip()
 nn_osmiss["Descripci\u00f3n"] = nn_osmiss["Descripci\u00f3n"].str.strip()
-nbu["CODIGO"]          = nbu["CODIGO"].str.strip()
-nbu["DETERMINACIONES"] = nbu["DETERMINACIONES"].str.strip()
+nbu["CODIGO"]           = nbu["CODIGO"].str.strip()
+nbu["Determinaciones"]  = nbu["Determinaciones"].str.strip()
 
 dict_nn     = dict(zip(nn["C\u00f3digo Nomenclador"], nn["Descripci\u00f3n"]))
 dict_osmiss = dict(zip(nn_osmiss["C\u00f3digo"], nn_osmiss["Descripci\u00f3n"]))
-dict_nbu    = dict(zip(nbu["CODIGO"], nbu["DETERMINACIONES"]))
+dict_nbu    = dict(zip(nbu["CODIGO"], nbu["Determinaciones"]))
 
 # --- Paso 1: agrupar filas principales con sus gastos adicionales ---
 # Fila adicional: nomenclador == "0" o "4" con codigo == "0"
