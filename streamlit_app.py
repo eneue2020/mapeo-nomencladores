@@ -398,6 +398,126 @@ def proceso_laboratorios_nbu():
 
 
 # ─────────────────────────────────────────────
+#  PROCESO 5: MAPEO GENERAL
+# ─────────────────────────────────────────────
+def proceso_mapeo_general():
+    st.header('Mapeo General')
+    st.markdown('Busca prácticas de `prestador.csv` en `NN.csv`, `NN_OSMISS.csv` y `NBU.csv`')
+
+    modo = st.radio('Buscar por:', ['Código', 'Nombre / Descripción'], horizontal=True, key='mg_modo')
+
+    f_prestador = st.file_uploader('prestador.csv',  type='csv', key='mg_prestador')
+    f_nn        = st.file_uploader('NN.csv',         type='csv', key='mg_nn')
+    f_osmiss    = st.file_uploader('NN_OSMISS.csv',  type='csv', key='mg_osmiss')
+    f_nbu       = st.file_uploader('NBU.csv',        type='csv', key='mg_nbu')
+
+    if st.button('▶ Ejecutar', key='btn_mapeo_general'):
+        if not all([f_prestador, f_nn, f_osmiss, f_nbu]):
+            st.warning('Cargá todos los archivos antes de ejecutar.')
+            return
+
+        with st.spinner('Procesando...'):
+            prestador = leer_csv(f_prestador)
+            nn        = leer_csv(f_nn)
+            nn_osmiss = leer_csv(f_osmiss)
+            nbu       = leer_csv(f_nbu)
+
+            prestador['codigo_c']     = prestador['codigo_c'].str.strip()
+            prestador['PRESTACIONES'] = prestador['PRESTACIONES'].str.strip()
+            prestador['valor']        = prestador['valor'].str.strip()
+            prestador['codigo']       = prestador['codigo'].str.strip()
+            prestador['Nomenclador']  = prestador['Nomenclador'].str.strip()
+
+            nn['C\xf3digo Nomenclador'] = nn['C\xf3digo Nomenclador'].str.strip()
+            nn['Descripci\xf3n']        = nn['Descripci\xf3n'].str.strip()
+            nn_osmiss['C\xf3digo']      = nn_osmiss['C\xf3digo'].str.strip()
+            nn_osmiss['Descripci\xf3n'] = nn_osmiss['Descripci\xf3n'].str.strip()
+            nbu['CODIGO']              = nbu['CODIGO'].str.strip()
+            nbu['Determinaciones']     = nbu['Determinaciones'].str.strip()
+
+            dict_nn     = dict(zip(nn['C\xf3digo Nomenclador'], nn['Descripci\xf3n']))
+            dict_osmiss = dict(zip(nn_osmiss['C\xf3digo'], nn_osmiss['Descripci\xf3n']))
+            dict_nbu    = dict(zip(nbu['CODIGO'], nbu['Determinaciones']))
+            diccionarios = {'NN': dict_nn, 'N OSMISS': dict_osmiss, 'NBU': dict_nbu}
+
+            def sim(a, b):
+                return SequenceMatcher(None, a.upper().strip(), b.upper().strip()).ratio()
+
+            def buscar_nombre(practica, umbral=0.4):
+                resultados = []
+                for nom, d in diccionarios.items():
+                    mejor_cod = mejor_desc = ''
+                    mejor_score = 0.0
+                    for cod, desc in d.items():
+                        s = sim(practica, desc)
+                        if s > mejor_score:
+                            mejor_score = s; mejor_cod = cod; mejor_desc = desc
+                    if mejor_score >= umbral:
+                        resultados.append((nom, mejor_cod, mejor_desc))
+                return resultados
+
+            filas = []
+            bar = st.progress(0, text='Procesando filas...')
+            total = len(prestador)
+
+            for i, (_, row) in enumerate(prestador.iterrows()):
+                codigo_c   = str(row['codigo_c']).strip()
+                prestacion = str(row['PRESTACIONES']).strip()
+                valor      = str(row['valor']).strip()
+                codigo_ref = str(row['codigo']).strip()
+                nom_ref    = str(row['Nomenclador']).strip()
+                encontrado = False
+
+                if modo == 'Código':
+                    for nom, d in diccionarios.items():
+                        if codigo_ref in d:
+                            filas.append({
+                                'Codigo Prestador':        codigo_c,
+                                'Practica Prestador':      prestacion,
+                                'Valor':                   valor,
+                                'Nomenclador Referencia':  nom_ref,
+                                'Codigo Nomenclador':      codigo_ref,
+                                'Nomenclador':             nom,
+                                'Descripcion Nomenclador': d[codigo_ref],
+                                'Estado':                  'Encontrado',
+                            })
+                            encontrado = True
+                            break
+                else:
+                    resultados = buscar_nombre(prestacion)
+                    if resultados:
+                        for nom, cod, desc in resultados:
+                            filas.append({
+                                'Codigo Prestador':        codigo_c,
+                                'Practica Prestador':      prestacion,
+                                'Valor':                   valor,
+                                'Nomenclador Referencia':  nom_ref,
+                                'Codigo Nomenclador':      cod,
+                                'Nomenclador':             nom,
+                                'Descripcion Nomenclador': desc,
+                                'Estado':                  'Encontrado',
+                            })
+                        encontrado = True
+
+                if not encontrado:
+                    filas.append({
+                        'Codigo Prestador':        codigo_c,
+                        'Practica Prestador':      prestacion,
+                        'Valor':                   valor,
+                        'Nomenclador Referencia':  nom_ref,
+                        'Codigo Nomenclador':      '',
+                        'Nomenclador':             '',
+                        'Descripcion Nomenclador': '',
+                        'Estado':                  'No Encontrado',
+                    })
+
+                bar.progress(int((i+1)/total*100), text='Fila %d / %d' % (i+1, total))
+
+            df = pd.DataFrame(filas)
+        mostrar_descargas(df, 'resultado_mapeo_general')
+
+
+# ─────────────────────────────────────────────
 #  NAVEGACIÓN SIDEBAR
 # ─────────────────────────────────────────────
 st.sidebar.image('https://img.icons8.com/color/96/hospital.png', width=80)
@@ -409,6 +529,7 @@ procesos = {
     '🏨 Sanatorio NN / N OSMISS': proceso_sanatorio_nn,
     '🧪 NBU':                    proceso_nbu,
     '🔬 Laboratorios NBU':       proceso_laboratorios_nbu,
+    '🔍 Mapeo General':          proceso_mapeo_general,
 }
 
 seleccion = st.sidebar.radio('Seleccionar proceso:', list(procesos.keys()))
