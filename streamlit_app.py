@@ -66,7 +66,7 @@ def mostrar_descargas(df, nombre_base):
                        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
 
     st.subheader('Vista previa')
-    st.dataframe(df, use_container_width=True)
+    st.dataframe(df, width='stretch')
 
 
 # ─────────────────────────────────────────────
@@ -251,9 +251,9 @@ def proceso_nbu():
             sanatorio = leer_csv(f_san)
             nbu       = leer_csv(f_nbu)
 
-            nbu['CODIGO']          = nbu['CODIGO'].str.strip()
-            nbu['Determinaciones'] = nbu['Determinaciones'].str.strip()
-            dict_nbu = dict(zip(nbu['CODIGO'], nbu['Determinaciones']))
+            nbu['COD']                         = nbu['COD'].str.strip()
+            nbu['D E T E R M I N A C I O N E S'] = nbu['D E T E R M I N A C I O N E S'].str.strip()
+            dict_nbu = dict(zip(nbu['COD'], nbu['D E T E R M I N A C I O N E S']))
 
             def similitud(a, b):
                 return SequenceMatcher(None, a.upper().strip(), b.upper().strip()).ratio()
@@ -304,7 +304,7 @@ def proceso_nbu():
                     cod_nom = codigo; desc_nom = dict_nbu[codigo]; estado = 'Encontrado'
                 else:
                     cod_nom, desc_nom, score = buscar_nbu(practicas)
-                    estado = 'Encontrado' if score >= UMBRAL else 'No Encontrado'
+                    estado = 'Encontrado por similitud' if score >= UMBRAL else 'No Encontrado'
                     if score < UMBRAL:
                         cod_nom = desc_nom = ''
 
@@ -342,8 +342,8 @@ def proceso_laboratorios_nbu():
             centro = leer_csv(f_centro)
             nbu    = leer_csv(f_nbu)
 
-            nbu['CODIGO']          = nbu['CODIGO'].str.strip()
-            nbu['Determinaciones'] = nbu['Determinaciones'].str.strip()
+            nbu['COD']                         = nbu['COD'].str.strip()
+            nbu['D E T E R M I N A C I O N E S'] = nbu['D E T E R M I N A C I O N E S'].str.strip()
             centro['practica']     = centro['practica'].str.strip()
             centro['valor']        = centro['valor'].str.strip()
 
@@ -354,7 +354,7 @@ def proceso_laboratorios_nbu():
                     t = t.replace(origen, destino)
                 return t
 
-            descripciones_nbu = nbu['Determinaciones'].fillna('').tolist()
+            descripciones_nbu = nbu['D E T E R M I N A C I O N E S'].fillna('').tolist()
             practicas_centro  = [normalizar(p) for p in centro['practica'].fillna('').tolist()]
             practicas_orig    = centro['practica'].fillna('').tolist()
             valores_orig      = centro['valor'].fillna('').tolist()
@@ -386,8 +386,8 @@ def proceso_laboratorios_nbu():
                     for j in indices:
                         filas.append({
                             'Practica Centro': practicas_orig[i], 'Valor': valores_orig[i],
-                            'COD NBU':         nbu.iloc[j]['CODIGO'],
-                            'Descripcion NBU': nbu.iloc[j]['Determinaciones'],
+                            'COD NBU':         nbu.iloc[j]['COD'],
+                            'Descripcion NBU': nbu.iloc[j]['D E T E R M I N A C I O N E S'],
                             'Similitud':       round(scores[j], 4),
                             'Estado':          'Encontrado'
                         })
@@ -432,12 +432,12 @@ def proceso_mapeo_general():
             nn['Descripci\xf3n']        = nn['Descripci\xf3n'].str.strip()
             nn_osmiss['C\xf3digo']      = nn_osmiss['C\xf3digo'].str.strip()
             nn_osmiss['Descripci\xf3n'] = nn_osmiss['Descripci\xf3n'].str.strip()
-            nbu['CODIGO']              = nbu['CODIGO'].str.strip()
-            nbu['Determinaciones']     = nbu['Determinaciones'].str.strip()
+            nbu['COD']                         = nbu['COD'].str.strip()
+            nbu['D E T E R M I N A C I O N E S'] = nbu['D E T E R M I N A C I O N E S'].str.strip()
 
             dict_nn     = dict(zip(nn['C\xf3digo Nomenclador'], nn['Descripci\xf3n']))
             dict_osmiss = dict(zip(nn_osmiss['C\xf3digo'], nn_osmiss['Descripci\xf3n']))
-            dict_nbu    = dict(zip(nbu['CODIGO'], nbu['Determinaciones']))
+            dict_nbu    = dict(zip(nbu['COD'], nbu['D E T E R M I N A C I O N E S']))
             diccionarios = {'NN': dict_nn, 'N OSMISS': dict_osmiss, 'NBU': dict_nbu}
 
             def sim(a, b):
