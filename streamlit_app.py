@@ -13,7 +13,12 @@ st.set_page_config(page_title="Mapeo Nomencladores", layout="wide", page_icon="�
 #  UTILIDADES COMUNES
 # ─────────────────────────────────────────────
 def leer_csv(file):
-    df = pd.read_csv(file, sep=';', header=0, dtype=str, encoding='latin-1')
+    import csv
+    content = file.read()
+    sample = content[:2048].decode('latin-1', errors='replace')
+    sep = csv.Sniffer().sniff(sample, delimiters=';,|\t').delimiter
+    import io as _io
+    df = pd.read_csv(_io.BytesIO(content), sep=sep, header=0, dtype=str, encoding='latin-1', on_bad_lines='skip')
     df.columns = df.columns.str.strip()
     df = df.dropna(how='all')
     return df
