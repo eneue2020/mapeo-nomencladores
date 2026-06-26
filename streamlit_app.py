@@ -523,6 +523,98 @@ def proceso_mapeo_general():
 
 
 # ─────────────────────────────────────────────
+#  PROCESO 6: LABORATORIOS
+# ─────────────────────────────────────────────
+def proceso_laboratorios():
+    st.header('Laboratorios')
+    st.markdown('Cruza `laboratorios.csv` contra `NBU.csv` y fallback a `NN_OSMISS.csv`')
+
+    f_lab    = st.file_uploader('laboratorios.csv', type='csv', key='lab_lab')
+    f_nbu    = st.file_uploader('NBU.csv',          type='csv', key='lab_nbu')
+    f_osmiss = st.file_uploader('NN_OSMISS.csv',    type='csv', key='lab_osmiss')
+
+    if st.button('▶ Ejecutar', key='btn_laboratorios'):
+        if not all([f_lab, f_nbu, f_osmiss]):
+            st.warning('Cargá todos los archivos antes de ejecutar.')
+            return
+
+        with st.spinner('Procesando...'):
+            lab       = leer_csv(f_lab)
+            nbu       = leer_csv(f_nbu)
+            nn_osmiss = leer_csv(f_osmiss)
+
+            lab['practica']          = lab['practica'].str.strip()
+            lab['valor']             = lab['valor'].str.strip()
+            nbu['CODIGO']            = nbu['CODIGO'].str.strip()
+            nbu['Determinaciones']   = nbu['Determinaciones'].str.strip()
+            nn_osmiss['Codigo']      = nn_osmiss['Codigo'].str.strip()
+            nn_osmiss['Descripcion'] = nn_osmiss['Descripcion'].str.strip()
+
+            REEMPLAZOS = {'en sangre': 'serica', 'orina': 'urinario'}
+            def normalizar(texto):
+                t = str(texto).lower()
+                for origen, destino in REEMPLAZOS.items():
+                    t = t.replace(origen, destino)
+                return t
+
+            practicas_orig = lab['practica'].fillna('').tolist()
+            practicas_norm = [normalizar(p) for p in practicas_orig]
+            desc_nbu       = nbu['Determinaciones'].fillna('').tolist()
+            desc_osmiss    = nn_osmiss['Descripcion'].fillna('').tolist()
+
+            UMBRAL = 0.5
+            st.info('Vectorizando con TF-IDF...')
+            vec_nbu    = TfidfVectorizer().fit(desc_nbu + practicas_norm)
+            sim_nbu    = cosine_similarity(vec_nbu.transform(practicas_norm), vec_nbu.transform(desc_nbu))
+            vec_osmiss = TfidfVectorizer().fit(desc_osmiss + practicas_norm)
+            sim_osmiss = cosine_similarity(vec_osmiss.transform(practicas_norm), vec_osmiss.transform(desc_osmiss))
+
+            filas = []
+            bar   = st.progress(0, text='Procesando coincidencias...')
+            total = len(practicas_norm)
+
+            for i, practica in enumerate(practicas_norm):
+                if not practica:
+                    continue
+                valor = lab.iloc[i]['valor']
+                indices_nbu = sorted([j for j, s in enumerate(sim_nbu[i]) if s >= UMBRAL],
+                                     key=lambda j: sim_nbu[i][j], reverse=True)
+                if indices_nbu:
+                    for j in indices_nbu:
+                        filas.append({
+                            'Practica':    practicas_orig[i], 'Valor': valor,
+                            'Fuente':      'NBU',
+                            'Codigo':      nbu.iloc[j]['CODIGO'],
+                            'Descripcion': nbu.iloc[j]['Determinaciones'],
+                            'Similitud':   round(sim_nbu[i][j], 4),
+                            'Estado':      'Encontrado',
+                        })
+                else:
+                    indices_osm = sorted([j for j, s in enumerate(sim_osmiss[i]) if s >= UMBRAL],
+                                         key=lambda j: sim_osmiss[i][j], reverse=True)
+                    if indices_osm:
+                        for j in indices_osm:
+                            filas.append({
+                                'Practica':    practicas_orig[i], 'Valor': valor,
+                                'Fuente':      'N OSMISS',
+                                'Codigo':      nn_osmiss.iloc[j]['Codigo'],
+                                'Descripcion': nn_osmiss.iloc[j]['Descripcion'],
+                                'Similitud':   round(sim_osmiss[i][j], 4),
+                                'Estado':      'Encontrado',
+                            })
+                    else:
+                        filas.append({
+                            'Practica':    practicas_orig[i], 'Valor': valor,
+                            'Fuente':      '', 'Codigo': '', 'Descripcion': '',
+                            'Similitud':   '', 'Estado': 'No Encontrado',
+                        })
+                bar.progress(int((i+1)/total*100), text='Practica %d / %d' % (i+1, total))
+
+            df = pd.DataFrame(filas)
+        mostrar_descargas(df, 'resultado_laboratorios')
+
+
+# ─────────────────────────────────────────────
 #  NAVEGACIÓN SIDEBAR
 # ─────────────────────────────────────────────
 st.sidebar.image('https://img.icons8.com/color/96/hospital.png', width=80)
@@ -534,6 +626,7 @@ procesos = {
     '🏨 Sanatorio NN / N OSMISS': proceso_sanatorio_nn,
     '🧪 NBU':                    proceso_nbu,
     '🔬 Laboratorios NBU':       proceso_laboratorios_nbu,
+    '🧫 Laboratorios':           proceso_laboratorios,
     '🔍 Mapeo General':          proceso_mapeo_general,
 }
 
