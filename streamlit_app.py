@@ -435,13 +435,13 @@ def proceso_mapeo_general():
 
             nn['C\xf3digo Nomenclador'] = nn['C\xf3digo Nomenclador'].str.strip()
             nn['Descripci\xf3n']        = nn['Descripci\xf3n'].str.strip()
-            nn_osmiss['C\xf3digo']      = nn_osmiss['C\xf3digo'].str.strip()
-            nn_osmiss['Descripci\xf3n'] = nn_osmiss['Descripci\xf3n'].str.strip()
+            nn_osmiss['Codigo']      = nn_osmiss['Codigo'].str.strip()
+            nn_osmiss['Descripcion'] = nn_osmiss['Descripcion'].str.strip()
             nbu['CODIGO']          = nbu['CODIGO'].str.strip()
             nbu['Determinaciones'] = nbu['Determinaciones'].str.strip()
 
             dict_nn     = dict(zip(nn['C\xf3digo Nomenclador'], nn['Descripci\xf3n']))
-            dict_osmiss = dict(zip(nn_osmiss['C\xf3digo'], nn_osmiss['Descripci\xf3n']))
+            dict_osmiss = dict(zip(nn_osmiss['Codigo'], nn_osmiss['Descripcion']))
             dict_nbu    = dict(zip(nbu['CODIGO'], nbu['Determinaciones']))
             diccionarios = {'NN': dict_nn, 'N OSMISS': dict_osmiss, 'NBU': dict_nbu}
 
