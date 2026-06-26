@@ -52,6 +52,9 @@ def guardar_excel_bytes(df):
     return buf.getvalue()
 
 def mostrar_descargas(df, nombre_base):
+    if df.empty or 'Estado' not in df.columns:
+        st.warning('No se generaron resultados.')
+        return
     st.success('Proceso finalizado.')
     enc = (df['Estado'] == 'Encontrado').sum()
     no  = (df['Estado'] == 'No Encontrado').sum()
@@ -440,9 +443,9 @@ def proceso_mapeo_general():
             nbu['CODIGO']          = nbu['CODIGO'].str.strip()
             nbu['Determinaciones'] = nbu['Determinaciones'].str.strip()
 
-            dict_nn     = dict(zip(nn['C\xf3digo Nomenclador'], nn['Descripci\xf3n']))
-            dict_osmiss = dict(zip(nn_osmiss['Codigo'], nn_osmiss['Descripcion']))
-            dict_nbu    = dict(zip(nbu['CODIGO'], nbu['Determinaciones']))
+            dict_nn     = {k: v for k, v in zip(nn['C\xf3digo Nomenclador'], nn['Descripci\xf3n']) if pd.notna(k) and pd.notna(v)}
+            dict_osmiss = {k: v for k, v in zip(nn_osmiss['Codigo'], nn_osmiss['Descripcion']) if pd.notna(k) and pd.notna(v)}
+            dict_nbu    = {k: v for k, v in zip(nbu['CODIGO'], nbu['Determinaciones']) if pd.notna(k) and pd.notna(v)}
             diccionarios = {'NN': dict_nn, 'N OSMISS': dict_osmiss, 'NBU': dict_nbu}
 
             def sim(a, b):
@@ -519,6 +522,9 @@ def proceso_mapeo_general():
                 bar.progress(int((i+1)/total*100), text='Fila %d / %d' % (i+1, total))
 
             df = pd.DataFrame(filas)
+            if df.empty:
+                st.warning('No se generaron resultados. Verificá los archivos cargados.')
+                return
         mostrar_descargas(df, 'resultado_mapeo_general')
 
 
