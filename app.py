@@ -14,7 +14,16 @@ from sklearn.metrics.pairwise import cosine_similarity
 #  UTILIDADES COMUNES
 # ─────────────────────────────────────────────
 def leer_csv(path):
-    df = pd.read_csv(path, sep=';', header=0, dtype=str, encoding='latin-1')
+    import csv, io
+    with open(path, 'rb') as f:
+        content = f.read()
+    sample = content[:2048].decode('latin-1', errors='replace')
+    try:
+        sep = csv.Sniffer().sniff(sample, delimiters=';,|\t').delimiter
+    except csv.Error:
+        sep = ';'
+    df = pd.read_csv(io.BytesIO(content), sep=sep, header=0, dtype=str,
+                     encoding='latin-1', on_bad_lines='skip')
     df.columns = df.columns.str.strip()
     df = df.dropna(how='all')
     return df
@@ -195,11 +204,8 @@ class VentanaMapeo(VentanaProceso):
             rossi['Nomenclador']           = rossi['Nomenclador'].str.strip()
             nn['C\xf3digo Nomenclador']    = nn['C\xf3digo Nomenclador'].str.strip()
             nn['Descripci\xf3n']           = nn['Descripci\xf3n'].str.strip()
-            nn_osmiss['C\xf3digo']         = nn_osmiss['C\xf3digo'].str.strip()
-            nn_osmiss['Descripci\xf3n']    = nn_osmiss['Descripci\xf3n'].str.strip()
-
             dict_nn     = dict(zip(nn['C\xf3digo Nomenclador'], nn['Descripci\xf3n']))
-            dict_osmiss = dict(zip(nn_osmiss['C\xf3digo'], nn_osmiss['Descripci\xf3n']))
+            dict_osmiss = dict(zip(nn_osmiss['Codigo'], nn_osmiss['Descripcion']))
 
             self._log('Procesando filas...')
             filas = []
@@ -292,8 +298,8 @@ class VentanaSanatorioNN(VentanaProceso):
 
             nn['Codigo Nomenclador'] = nn['C\xf3digo Nomenclador'].str.strip()
             nn['Descripcion']        = nn['Descripci\xf3n'].str.strip()
-            nn_osmiss['Codigo']      = nn_osmiss['C\xf3digo'].str.strip()
-            nn_osmiss['Descripcion'] = nn_osmiss['Descripci\xf3n'].str.strip()
+            nn_osmiss['Codigo']      = nn_osmiss['Codigo'].str.strip()
+            nn_osmiss['Descripcion'] = nn_osmiss['Descripcion'].str.strip()
 
             dict_nn     = dict(zip(nn['Codigo Nomenclador'], nn['Descripcion']))
             dict_osmiss = dict(zip(nn_osmiss['Codigo'], nn_osmiss['Descripcion']))
@@ -613,6 +619,259 @@ class VentanaLaboratoriosNBU(VentanaProceso):
 
 
 # ─────────────────────────────────────────────
+#  VENTANA: LABORATORIOS
+# ─────────────────────────────────────────────
+class VentanaLaboratorios(VentanaProceso):
+    def __init__(self, parent):
+        super().__init__(parent, 'Laboratorios',
+                         ['laboratorios.csv', 'NBU.csv', 'NN_OSMISS.csv'])
+
+    def _run(self):
+        try:
+            UMBRAL = 0.5
+            self._log('Cargando archivos...')
+            lab       = leer_csv(self.archivos['laboratorios.csv'].get())
+            nbu       = leer_csv(self.archivos['NBU.csv'].get())
+            nn_osmiss = leer_csv(self.archivos['NN_OSMISS.csv'].get())
+
+            lab['practica']          = lab['practica'].str.strip()
+            lab['valor']             = lab['valor'].str.strip()
+            nbu['CODIGO']            = nbu['CODIGO'].str.strip()
+            nbu['Determinaciones']   = nbu['Determinaciones'].str.strip()
+            nn_osmiss['Codigo']      = nn_osmiss['Codigo'].str.strip()
+            nn_osmiss['Descripcion'] = nn_osmiss['Descripcion'].str.strip()
+
+            self._log('  laboratorios: %d filas' % len(lab))
+            self._log('  NBU         : %d entradas' % len(nbu))
+            self._log('  NN_OSMISS   : %d entradas' % len(nn_osmiss))
+
+            REEMPLAZOS = {'en sangre': 'serica', 'orina': 'urinario'}
+            def normalizar(texto):
+                t = str(texto).lower()
+                for origen, destino in REEMPLAZOS.items():
+                    t = t.replace(origen, destino)
+                return t
+
+            practicas_orig = lab['practica'].fillna('').tolist()
+            practicas_norm = [normalizar(p) for p in practicas_orig]
+            desc_nbu       = nbu['Determinaciones'].fillna('').tolist()
+            desc_osmiss    = nn_osmiss['Descripcion'].fillna('').tolist()
+
+            self._log('Vectorizando con TF-IDF...')
+            vec_nbu    = TfidfVectorizer().fit(desc_nbu + practicas_norm)
+            sim_nbu    = cosine_similarity(vec_nbu.transform(practicas_norm), vec_nbu.transform(desc_nbu))
+            vec_osmiss = TfidfVectorizer().fit(desc_osmiss + practicas_norm)
+            sim_osmiss = cosine_similarity(vec_osmiss.transform(practicas_norm), vec_osmiss.transform(desc_osmiss))
+
+            self._log('Procesando coincidencias...')
+            filas = []
+            total = len(practicas_norm)
+            for i, practica in enumerate(practicas_norm):
+                if (i+1) % 20 == 0 or (i+1) == total:
+                    self._log('  Practica %d / %d' % (i+1, total))
+                if not practica:
+                    continue
+                valor = lab.iloc[i]['valor']
+
+                indices_nbu = sorted([j for j, s in enumerate(sim_nbu[i]) if s >= UMBRAL],
+                                     key=lambda j: sim_nbu[i][j], reverse=True)
+                if indices_nbu:
+                    for j in indices_nbu:
+                        filas.append({
+                            'Practica':    practicas_orig[i], 'Valor': valor,
+                            'Fuente':      'NBU',
+                            'Codigo':      nbu.iloc[j]['CODIGO'],
+                            'Descripcion': nbu.iloc[j]['Determinaciones'],
+                            'Similitud':   round(sim_nbu[i][j], 4),
+                            'Estado':      'Encontrado',
+                        })
+                else:
+                    indices_osm = sorted([j for j, s in enumerate(sim_osmiss[i]) if s >= UMBRAL],
+                                         key=lambda j: sim_osmiss[i][j], reverse=True)
+                    if indices_osm:
+                        for j in indices_osm:
+                            filas.append({
+                                'Practica':    practicas_orig[i], 'Valor': valor,
+                                'Fuente':      'N OSMISS',
+                                'Codigo':      nn_osmiss.iloc[j]['Codigo'],
+                                'Descripcion': nn_osmiss.iloc[j]['Descripcion'],
+                                'Similitud':   round(sim_osmiss[i][j], 4),
+                                'Estado':      'Encontrado',
+                            })
+                    else:
+                        filas.append({
+                            'Practica':    practicas_orig[i], 'Valor': valor,
+                            'Fuente':      '', 'Codigo': '', 'Descripcion': '',
+                            'Similitud':   '', 'Estado': 'No Encontrado',
+                        })
+
+            df = pd.DataFrame(filas)
+            salida    = self.carpeta_salida.get()
+            csv_path  = os.path.join(salida, 'resultado_laboratorios.csv')
+            xlsx_path = os.path.join(salida, 'resultado_laboratorios.xlsx')
+            df.to_csv(csv_path, sep=';', index=False, encoding='latin-1')
+            self._log('CSV guardado: %s' % csv_path)
+            guardar_excel(df, xlsx_path)
+            self._log('Excel guardado: %s' % xlsx_path)
+            self.ultimo_csv  = csv_path
+            self.ultimo_xlsx = xlsx_path
+            enc = (df['Estado'] == 'Encontrado').sum()
+            no  = (df['Estado'] == 'No Encontrado').sum()
+            self._log('\n=== RESUMEN ===')
+            self._log('  Encontrados    : %d' % enc)
+            self._log('  No encontrados : %d' % no)
+            self._log('Proceso finalizado.')
+            self._finalizar(True)
+        except Exception as e:
+            self._log('ERROR: %s' % str(e))
+            self._finalizar(False)
+
+
+# ─────────────────────────────────────────────
+#  VENTANA: MAPEO GENERAL
+# ─────────────────────────────────────────────
+class VentanaMapeoGeneral(VentanaProceso):
+    def __init__(self, parent):
+        self.modo = tk.StringVar(value='Código')
+        super().__init__(parent, 'Mapeo General',
+                         ['prestador.csv', 'NN.csv', 'NN_OSMISS.csv', 'NBU.csv'])
+
+    def _build_ui(self, titulo, archivos_requeridos):
+        super()._build_ui(titulo, archivos_requeridos)
+        # Insertar radio buttons después del título
+        frame_modo = tk.Frame(self)
+        frame_modo.grid(row=1, column=0, columnspan=3, sticky='w', padx=20, pady=(0, 5))
+        tk.Label(frame_modo, text='Buscar por:').pack(side='left')
+        tk.Radiobutton(frame_modo, text='Código',             variable=self.modo, value='Código').pack(side='left', padx=5)
+        tk.Radiobutton(frame_modo, text='Nombre/Descripción', variable=self.modo, value='Nombre').pack(side='left', padx=5)
+
+    def _run(self):
+        try:
+            self._log('Cargando archivos...')
+            prestador = leer_csv(self.archivos['prestador.csv'].get())
+            nn        = leer_csv(self.archivos['NN.csv'].get())
+            nn_osmiss = leer_csv(self.archivos['NN_OSMISS.csv'].get())
+            nbu       = leer_csv(self.archivos['NBU.csv'].get())
+
+            prestador['codigo_c']     = prestador['codigo_c'].str.strip()
+            prestador['PRESTACIONES'] = prestador['PRESTACIONES'].str.strip()
+            prestador['valor']        = prestador['valor'].str.strip()
+            prestador['codigo']       = prestador['codigo'].str.strip()
+            prestador['Nomenclador']  = prestador['Nomenclador'].str.strip()
+
+            nn['C\xf3digo Nomenclador'] = nn['C\xf3digo Nomenclador'].str.strip()
+            nn['Descripci\xf3n']        = nn['Descripci\xf3n'].str.strip()
+            nbu['CODIGO']          = nbu['CODIGO'].str.strip()
+            nbu['Determinaciones'] = nbu['Determinaciones'].str.strip()
+
+            dict_nn     = dict(zip(nn['C\xf3digo Nomenclador'], nn['Descripci\xf3n']))
+            dict_osmiss = dict(zip(nn_osmiss['Codigo'], nn_osmiss['Descripcion']))
+            dict_nbu    = dict(zip(nbu['CODIGO'], nbu['Determinaciones']))
+            diccionarios = {'NN': dict_nn, 'N OSMISS': dict_osmiss, 'NBU': dict_nbu}
+
+            def sim(a, b):
+                return SequenceMatcher(None, a.upper().strip(), b.upper().strip()).ratio()
+
+            def buscar_nombre(practica, umbral=0.4):
+                resultados = []
+                for nom, d in diccionarios.items():
+                    mejor_cod = mejor_desc = ''
+                    mejor_score = 0.0
+                    for cod, desc in d.items():
+                        s = sim(practica, desc)
+                        if s > mejor_score:
+                            mejor_score = s; mejor_cod = cod; mejor_desc = desc
+                    if mejor_score >= umbral:
+                        resultados.append((nom, mejor_cod, mejor_desc))
+                return resultados
+
+            modo   = self.modo.get()
+            filas  = []
+            total  = len(prestador)
+            self._log('Procesando %d filas (modo: %s)...' % (total, modo))
+
+            for i, (_, row) in enumerate(prestador.iterrows()):
+                if (i+1) % 20 == 0 or (i+1) == total:
+                    self._log('  Fila %d / %d' % (i+1, total))
+
+                codigo_c   = str(row['codigo_c']).strip()
+                prestacion = str(row['PRESTACIONES']).strip()
+                valor      = str(row['valor']).strip()
+                codigo_ref = str(row['codigo']).strip()
+                nom_ref    = str(row['Nomenclador']).strip()
+                encontrado = False
+
+                if modo == 'Código':
+                    for nom, d in diccionarios.items():
+                        if codigo_ref in d:
+                            filas.append({
+                                'Codigo Prestador':        codigo_c,
+                                'Practica Prestador':      prestacion,
+                                'Valor':                   valor,
+                                'Nomenclador Referencia':  nom_ref,
+                                'Codigo Nomenclador':      codigo_ref,
+                                'Nomenclador':             nom,
+                                'Descripcion Nomenclador': d[codigo_ref],
+                                'Estado':                  'Encontrado',
+                            })
+                            encontrado = True
+                            break
+                else:
+                    resultados = buscar_nombre(prestacion)
+                    if resultados:
+                        for nom, cod, desc in resultados:
+                            filas.append({
+                                'Codigo Prestador':        codigo_c,
+                                'Practica Prestador':      prestacion,
+                                'Valor':                   valor,
+                                'Nomenclador Referencia':  nom_ref,
+                                'Codigo Nomenclador':      cod,
+                                'Nomenclador':             nom,
+                                'Descripcion Nomenclador': desc,
+                                'Estado':                  'Encontrado',
+                            })
+                        encontrado = True
+
+                if not encontrado:
+                    filas.append({
+                        'Codigo Prestador':        codigo_c,
+                        'Practica Prestador':      prestacion,
+                        'Valor':                   valor,
+                        'Nomenclador Referencia':  nom_ref,
+                        'Codigo Nomenclador':      '',
+                        'Nomenclador':             '',
+                        'Descripcion Nomenclador': '',
+                        'Estado':                  'No Encontrado',
+                    })
+
+            df = pd.DataFrame(filas)
+            salida    = self.carpeta_salida.get()
+            csv_path  = os.path.join(salida, 'resultado_mapeo_general.csv')
+            xlsx_path = os.path.join(salida, 'resultado_mapeo_general.xlsx')
+
+            df.to_csv(csv_path, sep=';', index=False, encoding='latin-1')
+            self._log('CSV guardado: %s' % csv_path)
+            guardar_excel(df, xlsx_path)
+            self._log('Excel guardado: %s' % xlsx_path)
+
+            self.ultimo_csv  = csv_path
+            self.ultimo_xlsx = xlsx_path
+
+            enc = (df['Estado'] == 'Encontrado').sum()
+            no  = (df['Estado'] == 'No Encontrado').sum()
+            self._log('\n=== RESUMEN ===')
+            self._log('  Total filas    : %d' % len(df))
+            self._log('  Encontrados    : %d' % enc)
+            self._log('  No encontrados : %d' % no)
+            self._log('Proceso finalizado.')
+            self._finalizar(True)
+
+        except Exception as e:
+            self._log('ERROR: %s' % str(e))
+            self._finalizar(False)
+
+
+# ─────────────────────────────────────────────
 #  VENTANA PRINCIPAL
 # ─────────────────────────────────────────────
 class App(tk.Tk):
@@ -639,6 +898,8 @@ class App(tk.Tk):
             ('Sanatorio NN / N OSMISS', VentanaSanatorioNN),
             ('NBU',                     VentanaNBU),
             ('Laboratorios NBU',        VentanaLaboratoriosNBU),
+            ('Laboratorios',            VentanaLaboratorios),
+            ('Mapeo General',           VentanaMapeoGeneral),
         ]
 
         for texto, clase in botones:
