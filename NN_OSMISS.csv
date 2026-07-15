@@ -1,5 +1,4 @@
 Codigo;Descripcion
-;Consultas
 425001;Teleconsulta
 425002;CHEQUEO MODULO CONTROL GINECOLOGICO ANUAL DE 40 A 50 AÑOS
 425003;CHEQUEO MODULO CONTROL GINECOLOGICO ANUAL HASTA 40 AÑOS
@@ -12,7 +11,7 @@ Codigo;Descripcion
 425010;CHEQUEOS PREVENTIVOS DE SALUD HASTA 50 AÑOS -
 425011;Consulta Adicional  IVE/ILE
 425012;INTERCONSULTA POR TEMAS MAMARIOS
-425013;Consulta Otoneurológica con maniobras de reposicionamiento otoconial
+425013;Consulta Otoneurológica 
 425014;DETERMINACION DE FIBROSIS     
 425015;Atención en servicio de enfermería (por ejemplo, nebulización, inyección subcutánea o intramuscular, curación, lavado gástrico)
 425016;Acompañante terapéutico, hasta 8 horas
@@ -41,6 +40,13 @@ Codigo;Descripcion
 425056;Chequeo Básico de Salud con o sin capacidad aeróbica máxima
 425057;Consulta Equipo Interdisciplinario
 425058;CONSULTA APTO ACTIVIDAD DEPORTIVA ( + ESTUDIOS)
+425062;Otras consultas
+425063;EVALUACIÓN CLÍNICA ORL 
+425064;PROGRAMA DE APTITUD ESCOLAR
+425065;A.COMPLEJIDAD PEDIATRICO:INCLUYE EVALUACION MEDICA DE INICIO/SEGUIMIEN
+425066;MEDIA COMPLEJIDAD PEDIATRICO.INCL.EVALUACION MEDICA INICIO Y SEGUIMIEN
+425067;BAJA COMPLEJIDAD PEDIATRICO:INCL.EVALUACION MEDICA INICIO Y SEGUIMIENT
+;
 ;Atención en Guardia
 425020;Consulta Médica de Guardia
 425021;Consulta Médica de Guardia ginecológica
@@ -53,9 +59,12 @@ Codigo;Descripcion
 425029;Módulo de Observación en Guardia hasta 2 a 4 horas 
 425044;Consulta Médica de Guardia Especialista
 425049;Módulo de Observación en Guardia  6hs/12 hs.
-425052;Ventilación No Invasiva-H y G
+425052;Ventilación No Invasiva- 
 425053;CONSULTA STROKE GUARDIA NEUROL
 425060;AISLAMIENTO EN GUARDIA
+425061;Consulta de Guardia Nocturna /Sábado/Domingo/ Feriado 
+425068;Triage  de enfermería en guardia
+ ; 
 ;Emergentología
 425030;Teleconsulta de emergencia
 425031;Atención de paciente en emergencia y/o urgencia médica con móvil de alta complejidad, con o sin traslado
@@ -73,12 +82,18 @@ Codigo;Descripcion
 426009;DIAGNÓSTICO ETIOLÓGICO DE HIPERTENSIÓN ARTERIAL HOSPITAL DE DÍA
 426010;DIAGNÓSTICO DE RIESGO CARDIOVASCULAR EN EL PACIENTE HIPERTENSO
 426011;MÓDULO DE EVALUACIÓN DEL PACIENTE DIABÉTICO
+426012;CUIDADOS PALIATIVOS MODULO I 
+426013;CUIDADOS PALIATIVOS MODULO II
+426014;CUIDADOS PALIATIVOS MODULO III
+426015;MODULO PARA ESTUDIO DIAGNOSTICO DE HIPERINSULINISMO CONGENITO
+;
+;
 ;Internación
 437001;Módulo Día Clínico
 437002;Módulo Día Clínico Habitación compartida
-437003;Módulo Dia clinico hab. Vip
-437004;Adicional por Acompañante (cama para pernoctar y desayuno hab. VIP 430160)
-437005;Adicional por acompañante (cama para pernoctar y desayuno hab comun 430163)
+437003;Módulo Dia clinico hab. Individual / 
+437004;Adicional por Acompañante (cama para pernoctar y desayuno hab. VIP  
+437005;Adicional por acompañante (cama para pernoctar y desayuno hab comun  
 437006;Módulo de Observación  hasta 12 horas
 437007;Módulo de Observación hasta 8 horas
 437008;Módulo de Observación hasta 6 horas
@@ -114,6 +129,12 @@ Codigo;Descripcion
 437038;Adicional habitación individual x dia en modulos ( o adicional por obesidad morbida)
 437039;MOD INT EN PISO POR COVID-19
 437040;OXIGENOTERAPIA
+437041;OXIGENOTERAPIA Alto Flujo
+437042;MODULO DIA SUBSIG. QX ADICIONAL
+437043;DERECHO CLINICO OBSTETRICO POR DIA
+437044;ESTADIA EN UNIDAD ONCOHEMATOLOGICA C/24 HS
+407068;ADICIONAL HABITACIÓN LATEX FREE
+;
 407001;Día terapia intensiva (UTI)- Día unidad coronaria (UCO)- Día terapia intensiva pediátrica (UTIP), sin ARM 
 407002;Día terapia intensiva (UTI)- Día unidad coronaria (UCO)- Día terapia intensiva pediátrica (UTIP), con ARM 
 407004;Día T.I Pediatrica
@@ -128,19 +149,37 @@ Codigo;Descripcion
 407022;UTI - Día U.T. Intensiva sin A.R.M
 407023;UTI - Día U.T. Intensiva con A.R.M
 407024;AISLAMIENTO COVID - UTI SIN Y CON  ARM
-407025;AISLAMIENTO COVID - INFECTOCONTAGIOSO EN UNIDAD CERRADA- OTROS
+407025;AISLAMIENTO INFECTOCONTAGIOSO EN UNIDAD CERRADA- OTROS
 407026;Telemetría (Terapia Intermedia) Individual
 407027;Telemetría (Terapia Intermedia) Compartida
+407029;DERECHO CLINICO ATENCION DE QUEMADOS EN UNIDADES DE CUIDADOS ESPECIALES
+407069;ADICIONAL UNIDAD CERRADA LATEX FREE
+;
+;
+;
+;
 407012;Día Unidad Coronaria
 407013;Honorarios Médicos-UCO Baja Complejidad
 407014;Día UCO Alta Complejidad
 407015;Honorarios Médicos-UCO Alta Complejidad
 407019;UCO - Baja complejidad (Módulo)
 407020;UCO - Alta complejidad( Modulo)
+407030;UNIDAD DE DOLOR TORACICO/PRECORDIAL
+; 
+;
+;
+;
+;
+;
+;
 407003;Derecho ARM
 407017;MONIT.HEMD FUNCIONAL C/ECOTRAN
 407018;ECO CRITICA P/MONIT.HEMOD.FUNC
 407028;Módulo de asistencia circulatoria mecánica (Por día)
+;
+;
+;
+;
 407050;Módulo de UTI Neonatal Simple
 407051;Módulo de UTI Neonatal Media
 407052;Módulo de UTI Neonatal Compleja
@@ -154,6 +193,14 @@ Codigo;Descripcion
 407060;UTI NEONATAL - Terapia intensiva neonatal sin ARM
 407061;UTI NEONATAL - Cuidados intermedios neonatales (UCIN)
 407062;UTI NEONATAL - Cuidados especiales neonatales (UCEN)
+407063;VAFO (Ventilación de Alta Frecuencia Oscilatoria)
+407064;AISLAMIENTO  - UTI SIN Y CON  ARM
+407065;AISLAMIENTO COVID - INFECTOCONTAGIOSO EN UNIDAD CERRADA- OTROS
+407066;AISLAMIENTO  - CUIDADOS INTERMEDIOS NEO
+407067;AISLAMIENTO  - CUIDADSO ESPECIALES NEO
+;
+;
+;
 ;Cirugía Ambulatoria
 508001;Derechos Quirúrgicos hasta 30 minutos.
 508002;Derechos Quirúrgicos hasta 1 (una) hora
@@ -176,6 +223,18 @@ Codigo;Descripcion
 508125;Derecho de Monitoreo   
 508126;Derecho de Uso Video Endocamara 
 508127;Derecho de Uso de Artroscopio  
+508128;USO DE ARGON
+508129;USO DE ARGON PLASMA CON SONDA DE APLICACION
+508130;USO DE GENERADOR DE RADIOFRECUENCIA
+508131;USO EQUIPO Y MATERIAL DESCARTAB P/CIRUGIA TRANSLAPAROSCOPICA BILAT
+508132;MODULO CIRUGIA PEDIATRICA AMBULATORIA I
+508133;MODULO  QUIRÚRGICO AMBULATORIO  I
+508134;MODULO  QUIRÚRGICO AMBULATORIO  II
+508135;MODULO  QUIRÚRGICO AMBULATORIO  III
+508136;MODULO  QUIRÚRGICO AMBULATORIO  IV
+508137;MODULO  QUIRÚRGICO AMBULATORIO  VI
+508138;MODULO  QUIRÚRGICO AMBULATORIO  V
+;
 ;Cirugía  con  Internación
 508012;Derechos Quirúrgicos hasta 1 (una) hora
 508013;Derechos Quirúrgicos hasta 2 (dos) hora
@@ -183,6 +242,10 @@ Codigo;Descripcion
 508015;Hora adicional de Cirugia 
 508016;Uso de Torre Laparoscopio y óptica 
 508017;"Microscopio, Arco en ""C"" "
+508028;ADICIONAL QUIRÓFANO LATEX FREE
+508029;ADICIONAL INSTRUMENTADORA 
+508030;ADICIONAL CIRUJANO  STAND BY PARA ESTUDIOS
+508031;USO DE ENDOSCOPIO NEUROQUIRURGICO
 808087;MODULO ADULTO QUIRURGICO I
 808088;MODULO ADULTO QUIRURGICO II
 808089;MODULO ADULTO QUIRURGICO III
@@ -195,9 +258,28 @@ Codigo;Descripcion
 808096;MODULO PEDIATRICO QUIRURGICO IV
 808097;MODULO PEDIATRICO QUIRURGICO V
 808098;ADICIONAL INFECTOCONTAGIOSOS Y/O INMUNODEPRIMIDOS POR ACTO QX.
+808099;MODULO QUIRURGICO PATOLOGIA NEONATAL COMPLEJIDAD 1
+808100;MODULO QUIRURGICO PATOLOGIA NEONATAL COMPLEJIDAD 2
+808101;MODULO QUIRURGICO PATOLOGIA NEONATAL COMPLEJIDAD 3
+808102;MODULO QUIRURGICO PATOLOGIA NEONATAL COMPLEJIDAD 4
+808103;ADICIONAL PARA CIRUGIA SIN HUELLAS - TECNICA DE IMANLAP
+808104;PROCEDIMIENTOS PERCUTANEOS ENDOSCOPICOS Y ENDOVASCULARES GUIADOS POR IMÁGENES - NIVEL I
+808105;PROCEDIMIENTOS PERCUTANEOS ENDOSCOPICOS Y ENDOVASCULARES GUIADOS POR IMÁGENES - NIVEL II
+808106;PROCEDIMIENTOS PERCUTANEOS ENDOSCOPICOS Y ENDOVASCULARES GUIADOS POR IMÁGENES - NIVEL III
+808107;PROCEDIMIENTOS PERCUTANEOS ENDOSCOPICOS Y ENDOVASCULARES GUIADOS POR IMÁGENES - NIVEL IV
+808108;MODULO QUIRURGICO PATOLOGIA NEONATAL COMPLEJIDAD 5
+808109;MODULO QUIRURGICO PATOLOGIA NEONATAL COMPLEJIDAD 6
+808110;MODULO QUIRURGICO PATOLOGIA NEONATAL COMPLEJIDAD 7
+;
+;
+;
+;
+;
+;
 908001;Consola Bisturí Armónico (no incluye pinza)
 908002;USO BISTURI HARMONICO (Consola, Pinza , Mango y Cable)
 908003;Uso de láser en cirugía
+;
 ;Operaciones en el Sistema Nervioso
 18001;NEUROCIRUGIA MODULO I (B)
 18002;NEUROCIRUGIA MODULO II  ( C)
@@ -226,6 +308,15 @@ Codigo;Descripcion
 18036;NEUROCIRUGIA MODULO EXTRA IV
 18037;NEUROCIRUGIA MODULO EXTRA V
 18038;NEUROCIRUGIA MODULO EXTRA VI
+18039;PUNCIÓN BIOPSIA DE NERVIO
+18040;PARCHE EPIDURAL DE SANGRE-TEST INTRATECAL DEOPIOIDES O BACLOFENO
+18041;NEURALGIA DEL TRIGEMINO-GLOSOFARINGEO(TERMOLESION-BALON-ETC)
+18042;COLOCACION DE BOMBA INTRATECAL / NEUROESTIMULADOR
+18043;EXTRACCION DE BOMBA INTRATECAL O NEUROESTIMULADOR
+18044;COLOCACION O RECAMBIO DE FUENTE DE PODER PARA NEUROESTIMULADOR 2DO PAS
+18045;TERMOLESION POR RADIOFRECUENCIA
+18046;PUNCION LUMBAR PARA DETRMINACION DE PROTEINA B AMILOIDE EN L.C.R.
+18047;PRE Y POST CIRUGIA DE TUMOR CEREBRAL(EN QUIROFANO EVALUACION INTRAOPER
 ;Neurointervencionismo
 18005;Tratamientos endovascular de Aneurismas craneales con Embolizaciones Terapeuticas o Microlisis
 18006;Tratamientos endovasculares de Aneurismas y MAVs ( Mal Formaciones Arteriovenosas) Embolización
@@ -238,9 +329,18 @@ Codigo;Descripcion
 18013;Neurocirugía Endovascular - Embolización Tipo B
 18014;Neurocirugía Endovascular - Embolización Tipo C
 18024;Módulo de embolización pediátrica (EXCLUYE ANESTESIA)
+;
+;
+;
+;
 ;Operaciones en el aparato de la Visión
 ;Operaciones en la Orbita, Globo Ocular y Musculo Ocular
 20180;Módulo  Estrabismo Uni o Bilateral  (Honorarios y gastos)
+20181;MOD. DE ORBITOTOMIA POSTERIOR UNILATERAL
+20182;MOD. DE EXENTERACION DEL CONTENIDO ORBITARIO BILATERAL
+20183;MODULO DE ORBITOTOMIA ANTERIOR BILATERAL
+20184;MOD. DE ORBITOTOMIA POSTERIOR BILATERAL
+20185;MOD. DE ENUCLEACION O EVISCERACION DEL GLOBO OCULAR BILATERAL
 ;Operaciones en los parpados
 20280;Ptosis Palpebral  (Honorarios y gastos)
 20281;Ptosis Palpebral bilateral (Honorarios y gastos)
@@ -250,10 +350,12 @@ Codigo;Descripcion
 20285;PTOSIS PALPEBRAL UNILATERAL
 20286;PTOSIS PALPEBRAL BILATERAL
 20287;ECTROPIÓN / ENTROPIÓN
+;
 ;Operaciones en la Conjuntiva
 20380;Pterigion con Injerto de Conjuntiva (Honorarios y gastos)
 20381;Toma de Muestra Intraconjuntival (excluye análisis de la muestra)
 20382;Biopsia conjuntival
+20383;Pterigion con Injerto de Limbo
 ;Operaciones en la Cornea
 20480;Excimer Láser
 20481;Tratamiento de FEMTOSEC
@@ -264,6 +366,8 @@ Codigo;Descripcion
 20486;Modulo Queratoplastia DSAEK o DMEK
 20487;Modulo Queratoplastia DALK
 20488;Queratotomía Radial
+20489;Excimer Láser Bilateral
+;
 29002;Provision de segmento intraestomales
 ;Operaciones en el Iris y cuerpo Ciliar
 20580;Módulo Glaucoma (Honorarios y gastos)
@@ -272,10 +376,11 @@ Codigo;Descripcion
 20583;LASER SLT (trabeculoplastía selectiva para glaucoma unilateral)
 20584;CIRUGIA DE URGENCIA BAJA COMPLEJIDAD (INCLUYE: IRIDOTOMÍA, EXTRACCIÓN DE CUERPO EXTRAÑO)
 20585;Trabeculectomía UNILATERAL
-20586;Trabeculotomía
+20586;Trabeculotomía Bilateral
 20587;Viscocanalostomía
 20588;Implante valvular
 20589;Iridectomía UNILATERAL láser ARGON - por sesión
+;
 ;Operaciones en la Esclerótica y Retina
 20680;Vitrectomia Anterior o Simple (Honorarios y gastos)
 20681;Vitrectomia Compleja (UVEITIS Crónica, MER, ETC)  (Honorarios y gastos)
@@ -288,28 +393,54 @@ Codigo;Descripcion
 20688;Colocación placa Braquiterapia
 20689;Extracción placa Braquiterapia
 20690;Lesiones maculares - por sesión
+20691;Vitrectomia Simple Bilateral
+20692;Vitrectomia Compleja Bilateral
+20693;Desprendimiento de Retina Bilateral (sin silicon)
+20694;Inyección Intravitrea II (Honorarios y gastos)
 ;Operaciones en el Cristalino
 20780;Módulo de Catarata con Lente  (Honorarios y gastos) Excluye Lente
 20781;FACO + LIO PLEGABLE
 20782;IMPLANTE SECUNDARIO DE LIO *
 20783;Cir. catarata y glaucoma -facotrabeculectomía- UNILATERAL
 20784;Cir. impl./coloc. UNILATERAL lente fáquica -no incluye insumos-
+20785;MOD. FACOEMULSIFICACION CRITALINO/CIRUGIA DE CAT. CON IMPL LIO - BILAT
 29001;Lente
+;
 ;Operaciones en el Tracto lagrimal
 20880;Dacriocistorrinostomia, Fistulación de Saco Lagrimalen CA  (Honorarios y gastos)
 20881;Fimosis punto lagrimal
 20882;Colocación de tubo de Jones (excluye tubos)
 20883;Colocación de Puntum Plug/Minimonoka (excluye Puntum, minimonoka)
 20884;Colocación de Sonda de Silicon (excluye sondas)
+20885;Dacriocistorrinostomia, Fistulación de Saco Lagrimal  Bilateral
+;MOD. TTO DE OJO SECO CON OCLUSORES LACRIMALES EN CONSULTORIO - BILAT
+;MÓDULOS Cirugía Oftalmológica
+28001;CIRUGÍA OFTALMOLÓGICA - MÓDULO A
+28002;CIRUGÍA OFTALMOLÓGICA - MÓDULO B
+28003;CIRUGÍA OFTALMOLÓGICA - MÓDULO C
+ ;
+;
+ ; 
+;
+;
+;
+;
+;
+;
+;
 ;Otorrinolaringologicas
 ;Operaciones en el oído externo
 30180;RECONSTRUCCIÓN DEL PABELLÓN AURICULAR POR TIEMPO QUIRÚRGICO
 30181;OTOPLASTÍA DE OREJA EN CUCURUCHO
 30182;CIRUGÍA DE IMPLANTE OSTEO INTEGRADO DE OÍDO
+;
 ;Operaciones en el oído medio
 30280;Implante de oido medio
 30281;colocacion/Extraccion de Diabolo
 30282;MIRINGOPLASTIA ENDOSCOPICA
+;
+;
+;
 ;Operaciones en el oído interno y conducto auditivo
 30380;Implante coclear unilateral
 30381;NEURINOMA DEL ACÚSTICO
@@ -319,24 +450,46 @@ Codigo;Descripcion
 30481;SEPTUMPLASTÍA
 30482;TURBINOPLASTÍA
 30483;RINOSEPTUMPLASTÍA
+;
+;
 ;Operaciones en los senos paranasales
 30580;
+;
+;
 ;Operaciones en la laringe
 30680;Laringe parcial x via endoscópica-Laringectomia parcial endoscópica
 30681;LARINGOTRAQUEOPLASTÍA CON STENT
 30682;LARINGOTRAQUEOPLASTÍA SIN STENT (SINGLE STAGE
 30683;RESECCIÓN CRICOTRAQUEAL
+;
 ;Operaciones en DIENTES, ENCÍAS, MAXILAR INFERIOR
+;
+;
+;
+;
+;
+;
 ;Operaciones en la boca
-30980;sd
+30980;
+;
+;
 ;Operaciones en los labios
 31080;RESECCIÓN DE 1/4 LABIO POR TUMOR MALIGNO (INCLUYE REPARACIÓN)
+;
+;
 ;Operaciones en los lengua
-38011;sd
+ ;
+;
+;
 ;Operaciones en el paladar y la úvula
 31280;Uvulopalatoplastia
+;
+;
 ;Operaciones en amigdolas, adenoides, faringe y nasofaringe
 31380;MODULO AMIGDALECTOMIA, ADENOIDECTOMIA, MERINGOPLASTIA
+;
+;
+;
 ; Módulos ORL
 38006;Mód. ORL - A - Ambulatorio sin Inter. Sin  Recup.
 38007;Mód. ORL - B - Quirúrgico con Inter. en Recup. HASTA 8 Hs.
@@ -344,13 +497,15 @@ Codigo;Descripcion
 38009;Mód. ORL - D - Quirúrgico con Inter. en Piso - COMPLEJO
 38010;TRATAMIENTO DE LAS INFECCIONES CERVICALES PROFUNDAS
 38011;Colgajo mayor (Pectoral mayor, Supraescapular o similar)
+;
 ;Sistema Endocrino
 40180;Tiroplastía
 40280;Adrenalectomía por Vía Laparoscópica
+;
 ;Operaciones en el Tórax
 ;Operaciones en el Pulmón, Pleura y Mediastino
 58001;Neumotorax por cada inyección
-58002;Toracovideoscopia Treapeutica resecciones
+58002;Toracovideoscopia Terapeutica resecciones
 58003;Video Toracospia Terapeutica
 58004;Mód. Mediastinoscopía diag. o terap.
 58005;Mód. Traqueostomía en UTI
@@ -369,18 +524,45 @@ Codigo;Descripcion
 58018;Pleuroneumonectomía
 58019;Resección y/o reconstrucción de pared torácica
 58020;Resección pulmonar atípica o segmentectomía - Bullectomía x Toracotomía
-58021;MOD QX VENTANA PLEUROERICARDICA 
+58021;MOD QX VENTANA PLEUROPERICARDICA 
 58022;VIDEOTORACOSCOPIA DIAGNÓSTICA
+58023;LOBECTOMIA,NEUMONECTOMIA,SEGMENTECTOMIA O METASTASECTOMIA VIDEOASISTID
+58024;RESECCION PULMONAR EN CUÑA SEGUIDO DE LOBECTOMIA VIDEOASISTIDA
+58025;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD I -TORAX
+58026;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD II -TORAX
+58027;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD III -TORAX
+58028;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD IV -TORAX
+58029;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD V -TORAX
+58030;MODULO III CIRUGIA DE EXTRACCION DE 1 BARRA POST CIRUGIA DE CORRECCION DEFORMIDAD COMPLEJA DE LA PARED TORACICA ANTERIOR CON / SIN COMPRESION CARDIACA
+58031;MODULO IV CIRUGIA DE EXTRACCION DE 2 BARRAS POST CIRUGIA DE CORRECCION DEFORMIDAD COMPLEJA DE LA PARED TORACICA ANTERIOR CON / SIN COMPRESION CARDIACA
+58032;MODULO G CIRUGIA DE EXTRACCION DE 3 BARRAS POST CIRUGIA DE CORRECCION DEFORMIDAD COMPLEJA DE LA PARED TORACICA ANTERIOR CON COMPRESION CARDIACA
+58033;MODULO H CIRUGIA DE EXTRACCION DE 4 BARRAS POST CIRUGIA DE CORRECCION DEFORMIDAD COMPLEJA DE LA PARED TORACICA ANTERIOR CON COMPRESION 
+58034;MODULO II DE SIMPATICOTOMIA BILATERAL - HONORARIOS
+58035;ADICIONAL POR IMPLANTE PLACA EXTRA  POR UNIDAD - HONORARIOS
 ;Operaciones en la Mama
 60180;MOD QX CUADRANTECTOMIA + TUMORECTOMIA CON GANGLIO CENTINELA                                         
+60181;TUMORECTOMÍA / ESCICIÓN DE NÓDULO DE MAMA
+60182;MODULO QUIRURGICO DE PATOLOGIA MAMARIA ADULTOS - MOD I
+60183;MODULO QUIRURGICO DE PATOLOGIA MAMARIA ADULTOS - MOD II
+60184;MODULO QUIRURGICO DE PATOLOGIA MAMARIA ADULTOS - MOD III
+60185;MODULO QUIRURGICO DE PATOLOGIA MAMARIA ADULTOS - MOD IV
+60186;MODULO QUIRURGICO DE PATOLOGIA MAMARIA ADULTOS - MOD V
+;
 ;Operaciones en el Sistama Cardiovascular
 ;Operaciones en las arterias y Venas de la Cavidad Abdominal
 70480;TRATAMIENTO QUIRÚRGICO DE LA HIPERTENSIÓN PORTAL
+;
+;
+;
+;
+;
+;
 ;Infusión de Medicamentos
 70680;Infusión de medicamentos
 70681;Tratamiento esclerosante
 70682;Infusion de medicacion endovenosa c/monitoreo cardiologico
 70685;TRATAMIENTO ESCLEROSANTE CON GUIA ECOGRÁFICA UNILATERAL
+;
 ;Operaciones en las arterias y Venas de los Miembros Suoeriores e Inferiores
 70683;MICROCIRUGÍA DE VÁRICES UNILATERAL
 70684;MICROCIRUGÍA DE VÁRICES BILATERAL
@@ -388,6 +570,11 @@ Codigo;Descripcion
 70687;CURA AVANZADA DE HERIDAS EN QUIRÓFANO
 70688;CIRUGÍA HÍBRIDA
 70689;SECCIÓN Y LIGADURA DE PERFORANTES BILATERAL
+;
+;
+;
+;
+;
 ;Tratamientos flebológicos Ambulatorios
 75001;LASER ENDOLUMINAL UNILATERAL
 75002;LASER ENDOLUMINAL BILATERAL
@@ -406,6 +593,15 @@ Codigo;Descripcion
 75015;Esclerosis con espuma bajo guía ecográfica bilateral (Foam) x sesión
 75016;Linfografía fluorescente con verde Indiocianina (***)
 75017;Ablación mecanoquímica - Flebogrif (**) (***)
+;
+;
+;
+;
+;
+;
+;
+;
+;
 ;Cardiología Clínica, Intervencionista y Cirugía Cardiovascular
 78001;Cirugía cardiovascular central 
 78002;Cirugía en arterias de la cavidad abdominal 
@@ -436,6 +632,10 @@ Codigo;Descripcion
 78027;MÓDULO DE CIRUGÍA PERIFÉRICA I    pediatrica
 78028;MÓDULO DE CIRUGÍA PERIFÉRICA II (B)  pediatrica
 78029;MÓDULO DE CIRUGÍA PERIFÉRICA III (A)   pediatrica
+78030;MÓDULO DE CIRUGÍA PERIFÉRICA IV
+78031;MÓDULO DE CIRUGÍA PERIFÉRICA  V
+78032;MODULO D DE CIRUGIA CARDIACA C/CIRC.EXTRAC.E HIPOTERMIA PROFUNDA  
+78033;MODULO DE CIERRE ESTERNAL DIFERIDO
 ;Hemodinamia y Electrofisiología
 78101;Ablación de vías anómalas por radiofrecuencia simple
 78102;Ablación por radiofrecuencia con abordaje transeptal compleja
@@ -555,12 +755,26 @@ Codigo;Descripcion
 78220;HEMODINAMIA PEDIATRICA DIAGNOSTICA
 78221;Mód. Colocación o extracción de Holter implantable percutáneo
 78222;MÓDULO DE FULGURACIÓN II
+78223;OTROS ACCESOS VASCULARES COMPLEJOS
+78224;ANGIOGRAFÍA DIAGNÓSTICA
+78225;ANGIOPLASTIA CORONARIA SIMPLE CON ROTABLATOR (EXCL. ANEST.GRAL.)
+78226;ANGIOPLASTIA CORONARIA COMPLEJA CON ROTABLATOR (EXCL. ANESTESISTA)
+78227;ANGIOPLASTIA DE RAMAS DE ARTERIA PULMONAR 
+78228;VALVULOPLASTIA PULMONAR DE ESTENOSIS PULMONAR EN RECIEN NACIDO(EXCL.SE
+78229;DOSAJE DE SENOS PETROSOS (EXCLUYE ANESTESIA)
+78230;ABLACION TRANSCATETER POR RADIOFRECUENCIA PEDIATRICA DE NODULOS A-V VI
+78231;COLOCACION DE CATETER VENOSO CENTRAL
+78232;CRIOABLACIÓN II
+78233;Otros Estudios por cateterismos
+;
+;
 ;Angio intervencionismo
 78154;Angiografia y Embolizacion de arterias Uterinas
 78155;Quimioembolizacion de Tumores Perifericos con o sin Citostaticos
 78156;Biopsia Hepatica por Via Transyugular
 78157;Tips (Transyugular, intrahepatico y portosistemico SHUNT
 78158;Embolización de Hemorragias
+;
 ;Operaciones en el Aparato Digestivo y Abdómen
 ;Operaciones en el Ano 
 80680;HEMORROIDOPEXIA PPH
@@ -568,18 +782,20 @@ Codigo;Descripcion
 80682;RESECCIÓN TRASANAL DE RECTO CON STAPLER (STARR)
 80683;RESECCIÓN TRANSANAL MICROQUIRÚRGICA TEM/TEO
 80684;RESECCIÓN TOTAL DEL MESORRECTO TRANSANAL
+;
 ;Operaciones en el Hígado y Vías Biliares
 80780;CIRUGÍA COMPLEJA DE LA VÍA BILIAR
 80781;RECAMBIO DE DRENAJE DE VÍA BILIAR
 80782;TERMOABLACIÓN A CIELO ABIERTO
 80783;TERMOABLACIÓN POR RADIOFRECUENCIA BAJO GUÍA ECOGRÁFICA
 80784;Paracentesis de Higado
+;
 ;Módulos Quirúrgicos en el Aparato Digestivo y Abdómen
 88001;Modulo de Hernioplastia Laparoscopica
 88002;Modulo de Apendicectomia Laparoscopica
 88003;Modulo de Colecistectomia Laparoscopica
 88004;Modulo Colecistectomia Laparoscópica con colangio
-88005;Módulo  Cx.By Pass Gástrico/ Manga Gastrica
+88005;Módulo  Cx.By Pass Gástrico/ Manga Gastrica - MODULO  CX OBESIDAD I
 88006;Quimioembolización Hepática (sin Pensión)
 88007;Mód. Cirugía  Nissen Laparoscópica 
 88008;Mód. Colectomía Laparoscópica - Hemicolectomía
@@ -634,19 +850,41 @@ Codigo;Descripcion
 88055;MODULO PERCUTANEO SIMPLE
 88056;MODULO PERCUTANEO INTERMEDIO
 88057;MODULO PERCUTANEO COMPLEJO
+88060;GASTRECTOMIA VERTICAL EN MANGA PARA LA OBESIDAD MÓRBIDA VLP- MODULO CX.OBESIDAD II
+88061;BY PASS GASTROYEYUNAL PARA LA OBESIDAD MÓRBIDA- MODULO CX.OBESIDAD III
+88062;BY PASS GASTROYEYUNAL PARA LA OBESIDAD MÓRBIDA POR VLP- MODULO CX.OBESIDAD IV
+88063;DERIVACIÓN BILIODIGESTIVA  LAPAROSCOPICA
+88064;ULCERA GASTRODUODENAL PERFORADA LAPAROSCÓPICA
+88065;OPERACION DE MILES POR LAPAROSCOPIA
+88066;HEPATECTOMIA LAPAROSCOPICA
+88067;Reducción manual de hernia inguinal atascada.
+88068;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD I -  ABDOMEN
+88069;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD II -  ABDOMEN
+88070;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD III -  ABDOMEN
+88071;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD IV -  ABDOMEN
+88072;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD V -  ABDOMEN
+;
+;
 ;Operaciones en los Vasos y Ganglios Linfaticos
 90180;TRATAMIENTO DE LINFEDEMA NO COMPLICADO
 90181;TRATAMIENTO DE LINFEDEMA COMPLICADO
 90182;DRENAJE LINFATICO CON CINTAS ADHERIDAS A LA PIEL (TAPING)
 90183;SHUNT O BY PASS LINFOVENOSO POR LINFEDEMA, ASOCIADO O NO A LA LIPOASPIRACIÓN
+90184;ADICIONAL LINFADENECTOMIA UNILATERAL
+90185;ADICIONAL LINFADENECTOMIA BILATERAL
+90186;LINFADENECTOMIA LUMBOAÓRTICA  LAPAROSCÓPICA
+90187;LINFADENECTOMIA ILIOOBTURATRIZ  LAPAROSCÓPICA
+90188;MODULO GANGLIO CENTINELA EN MELANOMA
+90189;VACIAMIENTO FUNCIONAL DE CUELLO
+90190;MARCACION DE GANGLIO CENTINELA(EXCL.G.PROBE,SUST.RADIOACTIVA,CIRUGIA.)
 ;Aparato Urinario y Genital Masculino
 108001;Nefrostomia Percutanea con o sin Nefroscopia
 108002;Colocación de PIGTAIL o  Doble J Endoscópico
 108003;Retiro de PIGTAIL o  Doble J Endoscópico
 108004;Retroperitoneoscopica
-108005;Plastia Unión Ureteropielica LAPAROSCOPICA 
+108005;Plastia Unión Ureteropielica LAPAROSCOPICA
 108006;Nefrolitotomia Percutanea
-108007;Ureterolitotomia LAPAROSCOPICA con Pinza o DORMIA 
+108007;Ureterolitotomia LAPAROSCOPICA con Pinza o DORMIA
 108008;Ureterrenoscopia con litotomia Litotricia y Ecotomia por cualquier método
 108009;Litotricia extracorpórea renal y/o ureteral, por sesión
 108010;Litotricia extracorpórea renal y/o ureteral, por sesión (calculos entre 15 y 25 mm)
@@ -673,10 +911,25 @@ Codigo;Descripcion
 108031;Operación de Fournier  
 108032;Toilette Post x tiempom  ( post cx )
 108033;Endopielotomia Percutanea
+108034;MODULO LASER HOLEP
+108035;Módulo I de Cirugía Urológica Laparoscópica
+108036;Módulo II de Cirugía Urológica Laparoscópica
+108037;Módulo III de Cirugía Urológica Laparoscópica
+108038;Módulo IV de Cirugía Urológica  Laparoscópica
+108039;Módulo V de Cirugía Urológica  Laparoscópica
+108040;URETEROLITECTOMIA ENDOSCOPICA.
+108041;URETEROLITOTRICIA ENDOSCOPICA CON LASER DE HOLMIUM
+108042;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD I - GENITALES
+108043;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD II - GENITALES
+108044;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD III - GENITALES
+108045;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD IV - GENITALES
+108046;MODULO QUIRURGICO PEDIATRICO COMPLEJIDAD V - GENITALES
+;
+;
 ;Operaciones en el Aparato Genital Femenino y Obstétricas
 118002;Histerectomia Laparoscopica
 118003;Histerectomia Diagnóstica o Terapeutica
-118001;Modulo de Cirugia Ginecologica Laparoscopica
+118001;Modulo de Cirugia Ginecologica Laparoscopica I
 118004;Modulo Parto  - Hab Individual
 118005;Modulo Parto  - Hab Compartida
 118006;Modulo Cesarea - Hab. Individual
@@ -687,22 +940,42 @@ Codigo;Descripcion
 118018;LEEP DIAGNOSTICO O TERAPEUTICO
 118019;Histeroscopía diagnóstica
 118020;Histeroscopía biopsica y/o terapéutica con anestesia
-118014;Modulo de Cirugia Ginecologica Laparoscopica terapeutica
+118014;Modulo de Cirugia Ginecologica Laparoscopica II terapeutica
 118021;INSEMINACION ARTIF. INTRAUTER - H y G
 118022;Extracción dispositivo subdermico
 118023;MODULO BIOPSIA ENDOMETRIO O ENDOBRUSH
 118024;LASER CO2
 118025;LIGADURA TUBARIA ADICIONAL AL MODULO PARTO/CESAREA
-118026;Mód. ginecológico convencional complejidad intermedia
-118027;Mód. A ginecológico convencional complejidad mayor
-118028;Mód. B ginecológico convencional complejidad superior o máxima
+118026;Mód. ginecológico convencional  I complejidad intermedia
+118027;Mód. A ginecológico convencional II  complejidad mayor
+118028;Mód. B ginecológico convencional III complejidad superior o máxima
 118029;Implante  ANTICONCEPTIVOS  (OTROS)
+118030;MOD. ACRETISMO PLACENTARIO
+118031;Topicación, electrocoagulación, cauterización, etc. de lesiones cuello uterino
+118032;LEEP  TERAPEUTICO
+118033;LLETZ
+118034;INSEMINACION INTRAUTERINA
+118035;MODULO OBSTETRICO EMBARAZO ALTO RIESGO
+118036;Modulo Parto  -  sin honorarios
+118037;Modulo Cesarea - sin honorarios
+118038;Adicional ligadura tubaria  intracesárea
+118039;Adicional ligadura tubaria  intracesárea- sólo gastos
+118040;Adicional ligadura tubaria post parto - sólo gastos
+118041;Mód. ginecológico convencional IV
+118042;Mód. ginecológico convencional  V
+118043;Mód. ginecológico convencional VI
+118044;Mód. ginecológico convencional VII
+118045;Modulo de Cirugia Ginecologica Laparoscopica III
+ ;
 ;Módulos IVE/ILE
 118008;Módulo A
 118009;Módulo B
 118010;Módulo C
 118011;Módulo D
 118012;Módulo E
+;
+;
+;
 ;Operaciones en el Sistema Músculo Esquelético
 120280;INMOVILIZACIONES DE MS, MI y COLUMNA. CURACIONES Y SUTURAS DE HERIDAS 
 120480;PUNC.BIOP.SINOVIAL MANO Y PIE / RODILLA
@@ -779,6 +1052,32 @@ Codigo;Descripcion
 128075;Yeso Pequeño
 128076;Yeso Mediano
 128077;Yeso Mayor
+128078;Módulo Traumatología Complejidad 1
+128079;Módulo Traumatología Complejidad 2
+128080;Módulo Traumatología Complejidad 3
+128081;Módulo Traumatología Complejidad 4
+128082;Módulo Traumatología Complejidad 5
+128083;Módulo Traumatología Complejidad 6
+128084;Módulo Traumatología Complejidad 7
+128085;Módulo Traumatología Complejidad 8
+128086;Módulo Traumatología Complejidad 9
+128087;Módulo Traumatología Complejidad 10
+128088;Módulo Traumatología Complejidad 1 extra
+128089;Módulo Traumatología Complejidad 2  extra
+128090;Módulo Traumatología Complejidad 3 extra
+128091;Módulo Traumatología Complejidad 4 extra
+128092;Módulo Traumatología Complejidad 5 extra
+128093;Módulo Traumatología Complejidad 6 extra
+128094;Módulo Traumatología Complejidad 7 extra
+128095;Módulo Traumatología Complejidad 8 extra
+128096;Módulo Traumatología Complejidad 9 extra
+128097;Módulo Traumatología Complejidad 10 extra
+128101;MODULO 1 DE TRAUMATOLOGIA PEDIATRICA -
+128102;MODULO 2 DE TRAUMATOLOGIA PEDIATRICA -
+128103;MODULO 3 DE TRAUMATOLOGIA PEDIATRICA - 
+128104;MODULO 4 DE TRAUMATOLOGIA PEDIATRICA - 
+128105;MODULO 5 DE TRAUMATOLOGIA PEDIATRICA -
+;
 ;Cirugia Artroscópica y Artroplastias
 128001;Cirugia Artroscopica Rodilla Simple
 128002;Cirugia Artroscopica de Ligamentos Cruzados o Compleja
@@ -788,9 +1087,14 @@ Codigo;Descripcion
 128006;Mód Artroscopía de Cadera - Simple
 128007;Mód. Artroscopía de Cadera - Compleja
 128008;Mód Revisión de Artroplastia
-128028;MODULO ARTROSCOPICA DE HOMBRO  (otros)
+128098;MODULO ARTROSCOPICA DE HOMBRO  (otros)
+128099;CIRUGIA MIEMBRO INFERIOR: MODULO I PAT. TRAUM. C/TECNICA MINI INVASIVA
+128100;CIRUGIA MIEMBRO INFERIOR: MODULO II PAT. TRAUM.C/TECNICA MINI INVASIVA
+;
+;
 129901;Materiales ( férulas termoplásticas, )
 129902;Hueso Molido
+129903;VENDA/YESO
 ;Operaciones en la Piel y Tejido Celular Subcutáneo
 138001;Capilaroscopía
 138002;Dermatoscopía
@@ -840,6 +1144,13 @@ Codigo;Descripcion
 138046;MODULO MASTOPLASTIA DE AUMENTO Y SIMETRIZACIÓN 
 138047;MÓDULO RECONSTRUCCION MAMARIA 2DO TIEMPO, SIMETRIZACION, LIPOTRANSFERENCIA
 138048;MÓDULO RECONSTRUCCION MAMARIA 2DO TIEMPO, MASTOPEXIA, LIPOTRANSFERENCIA
+138049;VAC O SIMILAR (COLOCACIÓN, RECAMBIO, CONTROL POSTERIOR)  POR DÍA
+138050;Drenaje Abceso Superficial por Guardia
+138051;Diagnóstico con luz de Wood 
+138052;MODULO TRATAMIENTO HIPERHIDROSIS
+138053;CRIOCIRUGIA DERMATOLOGICA II
+;
+;
 ;ALERGIA 
 145001;DET.SENS.AEROAL.X TEC.PRICK T./DET.SENS.ALERG.ALIM.X TEC.PRICK 
 145002;PRUEBA PARCHE SENS.A ALIMENTOS
@@ -850,6 +1161,13 @@ Codigo;Descripcion
 145007;DESENSIBIL.AGUDA P/ALERG.MEDIC
 145008;PRUEB.PARCHE P/SENSIB.CONTACTO
 145009;Test cutáneo de alergia (Prick test)
+145010;TEST ALERGIA A DROGAS - ANALGESICOS
+145011;PRUEBA DE PROVOCACION CON DROGAS
+145012;PRUEBA DE PROVOCACION CON AINE PARA ENFERMEDAD RESPIRATORIA EXACERBADA
+;
+;
+;
+;
 ;Anatomia Patológica
 155001;CONSULTA DE PREPARADOS (AGREGAR LOS COD DE LOS ESTUDIOS QUE SE REALICE
 155002;Anatomia Patológica PAAF (Punción Aspirativa con Aguja Fina)
@@ -961,6 +1279,11 @@ Codigo;Descripcion
 168033;Complejidad VI
 168034;Complejidad VII
 168035;Complejidad VIII
+168036;RELLENO DE BOMBA INTRATECAL
+;
+;
+;
+;
 ;Cardiología
 175001;Riesgo quirurgico (ECG + Consulta)
 175002;Riesgo quirurgico cardiología pediatrico
@@ -1005,6 +1328,12 @@ Codigo;Descripcion
 175041;Variabilidad de la presión arterial
 175042;Evaluación Autonómica del Sistema Nervioso Central
 175043;Test farmacológico para arritmias 
+;
+;
+;
+;
+;
+;
 ;Ecografía
 185001;ECOGRAFIA CEREBRAL DEL RECIEN NACIDO
 185002;ECOGRAFIA TRANSFONTANELAR
@@ -1044,6 +1373,9 @@ Codigo;Descripcion
 185114;Ecostress Farmacologico (DIPIRIDAMOL )
 185115;ECOGRAFIA CON DENTRA SCANS
 185128;Ecografìa Intraoperatoria
+185132;Ecografia cualquier región por guardia
+185134;ECOGRAFIA ENDO RECTAL 360?
+185135;SONOHISTEROSCOPIA
 ;Ecodoppler
 185050;Ecodoppler blanco y negro
 185051;Ecodoppler blanco y negro periférico
@@ -1107,6 +1439,7 @@ Codigo;Descripcion
 185109;ECODOPPLER TISULAR
 185117;Doppler con colocacion de via central b/contro ecografico 
 185129;Ecodoppler transesofágico color intraoperatorio / Ecodoppler cardiaco color intraoperatorio
+185133;MODULO COMPLETO LABORATORIO VASCULAR
 ;Nutrición
 195001;Elaboración de Regimen individual- Antropometría
 195002;TEST DE NEUROPATIA AUTONOM.   
@@ -1121,10 +1454,11 @@ Codigo;Descripcion
 195011;T.COND.ALIM.Y TERAP.F.-PARCIAL
 195012;TRAT.GRUPAL POSTBARIAT.QUINCEN
 195013;CALORIMETRIA INDIRECTA        
+ ;
 ;Gastroenterología
 205003;Estudio dinámico de Glándulas Salivales
 205004;Ablación de Tumores Esofágicos por metodos físicos o químicos
-205005;Phmetria esofágica para lactantes
+205005;Phmetria esofágica para lactantes/ pediátrica
 205006;Phmetría 24 horas
 205007;Phmetria esofágica y/o gástrica computarizada 24 hs
 205008;Manometría digital digestiva
@@ -1144,12 +1478,18 @@ Codigo;Descripcion
 205079;Colocación de SNG transpilórica con intensificador de imágenes
 205080;MANOMETRÍA DIGITAL COLÓNICA
 205086;BIO FEED-BACK (+ de 1 sesión)
+;
 ;Endoscopías
 38001;Cirugia Endoscopica Rinosinusal Unilateral- CERS Unilateral
 38002;Cirugia Endoscopica Rinosinusal Bilateral- CERS Bilateral
 38003;Módulo videoendoscopía diagnóstica de senos paranasales, microsinusotomía endonasal sinusoscopía
 38004;Módulo cirugía videoendoscopica radical de parasinusitis, senos paranasales con septumplastía unilateral
 38005;Módulo cirugía videoendoscopica radical de parasinusitis,senos paranasales con septumplastía bilateral
+38012;EXCERESIS ENDOSCOPICA TRASNASAL
+38013;ENDOSCOPIA DE VIAS AEREAS SUPERIORES (PEDIATRICAS)(EVASP)
+38014;ENDOSCOPIA DE VIAS AEREAS SUPERIORES (PEDIATRICAS) CON EXTRACCION DE CUE
+38015;ENDOSCOPIA DE VIAS AEREAS SUPERIORES (PEDIATRICAS) CON TRAQUEOSTOMIA(EVA
+38016;ENDOSCOPIA DE VIAS AEREAS SUPERIORES (PEDIATRICAS)-RESECCION LESION (EVA
 205001;Colangiopancreatografía Retrógrada Endoscópica - CPRE
 205002;Colangiopancreatografía Retrógrada Endoscópica con extracción de calcúlo o papilotomía
 205013;Banding ligadura de varices esofágicas endoscópica
@@ -1203,7 +1543,7 @@ Codigo;Descripcion
 205063;VIDEOCAPSULA DE COLON         
 205064;FTRD                          
 205065;HEMOSPRAY                     
-205073;VEDA y/o VCC- Todas las endoscopias gastro  (Diagnóstica o terapeutica) -Con honorarios
+205073;VEDA y/o VCC- Todas las endoscopias gastro  (Diagnóstica o terapeutica) -
 205074;VEDA o VCC- PEDIATRICA - Todas las endoscopias gastro  (Diagnóstica)
 205075;VEDA o VCC- PEDIATRICA - Todas las endoscopias gastro  (terapeutica)
 205076;ANOSCOPIA DE ALTA RESOLUCION  
@@ -1224,7 +1564,12 @@ Codigo;Descripcion
 205094;Gastrostomía Endoscópica Pediatría
 205095;Recambio de Gastrostomía Endoscópica Pediatría 
 205096;COLEDOCOSCOPIA
+205097;TRATAMIENTO FOTODINAMICO DEL CANCER DE ESOFAGO
+205098;CONTROL DE GASTROSTOMIA
+205099;COLANGIOGRAFIA (complejidad especial)
+;
 209900;Material descartable endoscopias
+;
 285022;Endoscopia rigida Neumonología Infantil (Honorarios)
 285023;Endoscopia flexible Neumonología Infantil  (Honorarios)
 285024;Criobiopsia de pulmón
@@ -1237,8 +1582,11 @@ Codigo;Descripcion
 285052;Videobroncoscopía para coloc. o retiro de Stent
 285053;Mód. Videobroncoscopía rígida terapéutica simple
 285054;Mód. Videobroncoscopía rígida terapéutica compleja
+285056;TRATAMIENTO ENDOSCOPICO DEL EFISEMA AVANZADO (METODO MINIMAMENTE INVASIVO)
+;
 365019;BIOPSIA ENDOSCOPICA VESICAL CON PINZA FRIA
 365020;URETERORENOSCOPIA DIAGNOSTICA
+;
 ;Genética Humana
 215001;PUNCION DE VELLOSIDADES CORIONICAS (INCLUY.A. CROMOSOMICO C/PATOLOGO
 215002;AMNIOCENTESIS
@@ -1281,6 +1629,8 @@ Codigo;Descripcion
 215039;MICROARRAY PRENATAL           
 215040;EXOMA PRENATAL                
 215041;QF-PCR C/ CARIOTIPO A L. PLAZO
+215042;AMNIOREDUCCION
+215043;NT PLUS ESTUDIO GEMELAR COMPLETO
 ;Ginecología y Obstetricia
 225001;Toma de PAP
 225002;Toma de Biopsia
@@ -1292,7 +1642,11 @@ Codigo;Descripcion
 225008;Mód. de examen ginecológico bajo anestesia - con Recup
 225009;Mód. ginecológico convencional simple - con Recuperación - en quirófano
 225010;COLOCACION DE PESARIO 
-225011;Colposcopía
+225011;CONTROL OBSTETRICO EN CESAREA PROGRAMADA
+;
+;
+;
+;
 ;Hematología
 235001;Punción Aspiración Médula Ósea (Honorarios y materiales descartables)
 235002;Punción Biopsia Médula Ósea  y  subsig. c/u(Honorarios y materiales descartables)
@@ -1336,14 +1690,25 @@ Codigo;Descripcion
 235040;INMUNOHEMATOLÓGICO PREQUIRÚRGICO
 235041;ESTUDIO DE ANEMIA HEMOLÍTICA AUTOINMUNE Y ALOINMUNE
 235042;SELECCIÓN DE SANGRE APTA EN PACIENTE CON ANTICUERPOS IRREGULARES, POR UNIDAD
+235043;MODULO DE CONTROL DE ANEMIA
+235044;MODULO DE ESTUDIOS DE ANEMIA
+235045;MODULO CONTROL DE COAGULACION
+;
+;
+;
+;
+;
+;
+;
+;
 239901;MATERIAL DESCARTABLE HEMOTERAPIA
 ;Hemoterapia
 245001;Consulta médica o profesional
 245002;Autotransfusión - Autologas
-245003;Plasmaferesis con separador celular tipo Haemonetics o similar 
+245003;Plasmaferesis con separador celular tipo Haemonetics o similar
 245004;Aferesis de plaquetas 
 245005;Ultrafiltración
-245006;Ultrafiltración con filtros de  Prosorva o similares (Complementemia) 
+245006;Ultrafiltración con filtros de  Prosorva o similares (Complementemia)
 245007;Criopreservación
 245008;Agrupamiento pre transfusional  (sólo primera vez)
 245009;Aplicación de plasma rico en plaquetas, por procedimiento
@@ -1400,6 +1765,7 @@ Codigo;Descripcion
 249902;Filtros para Plaquetas
 249903;Modulo de transfusión (descart)
 249904;FILTRO DE LEUCOREDUCCION
+;
 ;Rehabilitación Médica
 255000;Kinesiología sesiones excedentes
 255001;Rehabilitación kinesica vestibular
@@ -1427,6 +1793,12 @@ Codigo;Descripcion
 255022;MÓDULO DE REHABILITACIÓN VIRTUAL DE LA CLÍNICA DE LA MEMORIA
 255023;Evaluación de terapia ocupacional
 255050;Fonoaudiología sesiones excedentes
+255051;Terapia del Lenguaje- por sesión
+255052;PSICOMOTRICIDAD (POR SESION)
+255053;REHABILITACIÓN NEUROLÓGICA I ( T.FÍSICA, OCUP., FONOAUD.)
+255054;REHABILITACIÓN ATM (REHABILITACION DE ARTICULACION TEMPOROMANDIBULAR)
+255055;REHABILITACIÓN NEUROLÓGICA II ( T.FÍSICA, OCUP., FONOAUD.)
+;
 ;Medicina Nuclear
 265002;Centellograma óseo parcial
 265003;Centellograma óseo 3 tiempos
@@ -1496,8 +1868,14 @@ Codigo;Descripcion
 265067;EST.DE NANOCOLOIDES AREA ADIC.
 265068;REVISION DE ESTUDIOS EXTERNOS 
 265069;RENOGRAMA ISOTÓPICO -
+265070;Centellograma Otros
+265071;Gammagrafía de shunt
+265072;Gammagrafía RGE
+265073;APLICACION DE ZEVAMAB
+265074;TTO. DE TERAPIA METABOLICA CON RADIO 223 POR SESION
 269901;Material Radiactivo según valores CEDIM
 269902;Drogas de apremio farmacológico
+;
 ;Nefrología
 275001;Colocación de catéter para diálisis peritoneal continua y entrenamiento del paciente o familiar
 275002;Derecho de Hemodiálisis (por sesión)
@@ -1516,6 +1894,10 @@ Codigo;Descripcion
 275015;Diálisis Continua Multifiltrate (en pacientes internados)
 275016;EXTRACCION DE CATETER DE DIALISIS PERITONEAL
 275017;DIÁLISIS PERITONEAL AUTOMATIZADA POR MES
+;
+;
+;
+;
 ;Neumonología
 285001;Calibración de CPAP - Titulación con CPAP
 285002;Estudio funcional respiratorio, hasta tres mediciones con difusión de monóxido de carbono
@@ -1552,7 +1934,11 @@ Codigo;Descripcion
 285048;COMPUTADORA VOL. MINUTO       
 285049;ASPIRACION CONTINUA           
 285050;SATUROMETRIA DE PULSO
+285055;LAVADO PULMONAR COMPLETO BILATERAL  
+285057;CAPACIDAD VITAL LENTA
+;
 289900;ADICIONAL FILTRO ESPIROMETRIA
+;
 ;Neumonología Infantil
 285017;cambio de canula de traqueotomia (Honorarios)
 285018;traqueotomia  (Honorarios)
@@ -1579,7 +1965,7 @@ Codigo;Descripcion
 295015;Potenciales Miogenicos Vestibulares - CVEMPS
 295016;Potenciales Miogenícos Oculares - OVEMPS
 295017;Potenciales Miogenicos Vestibulares y Oculares MULTIFRECUENCIALES
-295018;Potencia?es Evocados Auditìvos Tronco Cerebral|BERA)
+295018;Potencia?es Evocados Auditìvos Tronco Cerebral(BERA)
 295019;Potenciales Evocados Auditivos con deteccion de umbrales por tonos Multifrecuenciales
 295020;Bera con Anestesia General-Potenciales Evocados Bera con anestesia general
 295021;"Potenciales  Evocados Auditivos con deteccion de umbrales por tonos multifrecuenciales
@@ -1670,6 +2056,24 @@ Multifrecuenciales"
 295104;CONSULTA SEGUIM. DE PROGRAMAC 
 295105;TEST LEVODOPA                 
 295107;MODULO MUERTE CEREBRAL
+295108;TEST PARA EVALUAR SIMULACION DE SINTOMAS (SIS)
+295109;TRASTORNOS DE LA ATENCION / MEMORIA / MEMORIA VISUAL / AMNESIA GLOBAL TRANSITORIA
+295110;TRASTORNOS DEL LENGUAJE (AFASIAS, ALEXIAS)
+295111;EVALUACION GLOBAL DEL PACIENTE CON HIDROCEFALIANORMOTENSIVA (ADULTOS)
+295112;APLICACION TOXINA BOTULINICA BAJO GUIA ECOG. HONOR. NEURO (NO INCLUYE MEDIC)
+295113;REFLEJO BULBOCAVERNOSO
+295114;MODULO EVALUACIÓN FUNCIONAL INTEGRAL -EFI-
+295115;MODULO TERAPIA CETOGENICA (DC) -1er SEMESTRE
+295116;MODULO TERAPIA CETOGENICA (DC) -SEGUIMIENTO
+295117;VIDEO EEG 48 HS.
+295118;VIDEO EEG 72 HS
+295119;EEG 24 HS.
+295120;PPEE P 300 - COGNITIVO
+295121;PPEE AUTOMATIZADOS
+295122;PPEE MONITOREO INTRAQUIRURGICO II
+295123;PPEE MONITOREO INTRAQUIRURGICO  X HORA
+295124;MONITOREO EEG DURANTE TILT TEST
+;
 ;Oftalmologia
 305001;Angiografia digital oftalmológica
 305002;Biometría ocular
@@ -1691,7 +2095,7 @@ Multifrecuenciales"
 305018;Tomografía de coherencia óptica (OCT) - 
 305019;Tomografía retinal de Heidelberg (HRT)
 305020;Retinofluoresceinografia- retinografia digital Unilateral/Bilateral
-305021;PAQUIMETRIA COMPUTARIZADA 
+305021;PAQUIMETRIA COMPUTARIZADA
 305022;Campo Visual Computarizado
 305023;Topografía Corneal
 305024;Aladdin
@@ -1706,6 +2110,11 @@ Multifrecuenciales"
 305033;Autorrefractrometría
 305034;ESTUDIO RETINA PERIFERICA EN PREMATUROS
 305035;LASER POR OFTALMOSCOPIA BINOCULAR INDIRECTA (laser x OBI)
+305036;Tomografía retinal de Heidelberg (HRT) bilateral
+305037;Tomografía de coherencia óptica (OCT) - bilateral
+305038;Test de P.A.M.
+305039;Test de mirada preferencial
+305040;Test TNO
 ;ORL
 315001;Acufenometría
 315002;Audio Tonal Por Juego
@@ -1749,11 +2158,22 @@ Multifrecuenciales"
 315040;INFILTRACION TRANSTIMPANICA CON medicamentos
 315041;Videonistagmografía vestibular computarizada
 315042;Videonistagmografía computarizada con test calórico
+315043;TRATAMIENTO DE LESIONES OTORRINOLARINGOLICAS POR MEDIOS FISICOS Y/O QUIMICOS
+315044;EXÁMEN VESTIBULAR COMPLETO
+315045;ESTUDIO ENDOSCOPICO DE SUEÑO INDUCIDO POR DROGAS(DISE)/ SOMNOENDOSCOPIA
+315046;PRUEBAS SUPRALIMINARES  4 0 MÁS PRUEBAS JUNTAS
+315047;CALIBRACION DE AUDIFONOS
+315048;SELECCIÓN DE PROTESIS OSTEOIMPLANTABLES - PRUEBA DE BAHA
+315049;CALIBRACION DE PROTESIS OSTEOIMPLANTABLES (AUDIFONOS)
+315050;CALIBRACION IMPLANTE COCLEAR POSTERIORES AL MODULO BILATERAL
+;
+;
 ;Pediatría
 325001;IDENTIFIC.DEL RECIEN NACIDO   
 325002;FIBROQUISTICA DE PANCREAS     
 325003;TEST NEONATAL BASICO / FEI    
 325004;SCREENING OCULAR DEL RN
+325005;MODULO CONTROL RECIÉN NACIDO DE ALTO RIESGO
 ;Psiquiatria - Psicologia
 335001;Psicodiagnóstico (psicológico, psicopedagógico, cognitivo). Valoración geriátrica integral. Orientación vocacional.
 335002;Atención domiciliaria de salud mental
@@ -1762,16 +2182,18 @@ Multifrecuenciales"
 335005;CONSULTA PSICOPROF.PRE-QUIRURG
 335006;EVAL. NEUROPSICOLÓGICA ADULTOS
 335007;SESION - AP.ESTIMULAC.TEMPRANA
-335008;TEST NEUROCOGNITIVO PARKINSON - Derechos
-335009;TEST NEUROCOGNITIVO PARKINSON -Honorarios Médicos
+335008;TEST NEUROCOGNITIVO 
+335009;TEST NEUROCOGNITIVO  II
 335010;SESION PSICOLOGIA PEDIATRICA  
 335011;SESION PSICOPEDAGOGIA PEDIATRI
-335012;EVAL.NEUROCOGNITIVA PEDIATRICA
+335012;EVAL.NEUROCOGNITIVA / SENSORIAL
 335013;ESCALA BAYLEY III             
 335014;EVAL.NEURODESARROLLO PEDIATR. 
 335015;EVALUACION PSICODIAGNOSTICA   
 335016;SESION TEST ADOS II           
 335017;ADIR                          
+;
+;
 ;Radiología
 346001;RADIOGRAFIA CON TECNICA O PLACA MAMOGRAFICA
 346002;Espinograma (placa de 30 x 70cm)
@@ -1811,6 +2233,11 @@ Multifrecuenciales"
 346355;RADIOLOGIA DINÁMICA o RADIOSCOPIA DIGITAL
 346356;TRANSITO DIGEST.SUP.X VIDEOGRA
 346357;COLUMNA CERVICAL PERFIL CON INDICE DE PAVLOV Y THOR 
+346368;Rx 1° exposición
+346369;Rx 2° exposición
+346370;VIDEOFLUROSCOPIA EN ESTUDIOS
+346371;EPIDUROGRAFIA-RADICULOGRAFIA
+346372;DISCOGRAFIA UNICA O MULTIPLE
 349901;Contraste rx
 ;Densitometria Ósea
 346022;Densitometría ósea total o cuerpo entero
@@ -1921,7 +2348,19 @@ Multifrecuenciales"
 346363;Neumotomografía - Esofagogástrica con CTE por TC
 346364;Volumetría de nódulo pulmonar con TAC c/ contraste
 346365;Volumetría de enfisema con TAC c/ contraste
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
 349902;Contraste para TAC
+;
+;
 ;Resonancia Magnética
 346200;Resonancia Magnética Nuclear Cerebral
 346201;Resonancia Magnética Nuclear Tiroidea
@@ -2050,7 +2489,16 @@ Multifrecuenciales"
 346331;RNM  CON MICROBOBINA  
 346332;FLEBORESONANCIA DE MMII
 346366;RMN Cardíaca bajo anestesia  
+346367;Adicional Urgencia RMN
+;
+;
+;
+;
+;
+;
 349903;Contraste para RNM
+;
+;
 ;PET
 346310;PET - CT - CON GA68 - PSMA
 346311;PET - CT CON  F18 - PSMA
@@ -2061,6 +2509,9 @@ Multifrecuenciales"
 346316;PET DE CORAZÓN SIN RESONANCIA MAGNÉTICA
 346317;PET-CT DE CEREBRO CON FUSIÓN CON RESONANCIA MAGNÉTICA
 346318;PET-CT DE CORAZÓN
+;
+;
+;
 349904;Dosis marcador radioactivo para  PET
 ;Intervencionismo por Imágenes
 185030;Punción Biopsia profunda guiada por Ecografía (Honorarios, materiales descartables y gastos)
@@ -2093,10 +2544,14 @@ Multifrecuenciales"
 185110;BIOPSIA PROSTATICA TRANSRECTAL ECOGUIADA CON ANESTESIA MAS DE 12 TOMAS
 185116;Punción biopsia aspirativa para estudio citooncológico bajo guia ultrasónica
 185130;Alcoholización de tumores con guía ecográfica (por sesión)
+185131;DRENAJE DE ABSCESOS BAJO CONTROL ECOGRAFICO
+185136;CATETERISMO TUBARICO(CANALIZACION,REPERMEABILIZACION,SALPINGOPLASTIA,
+;
 346175;Punción biopsia directa (hepática, esplénica, médula ósea, pleural, pulmonar, tiroides, ganglionar, mamaria, articular, prostática, renal) bajo TAC o RMN
 346176;Punción Biopsia guiada por Tomografía (Honorarios, materiales descartables y gastos)
 346177;BRONCOSCOPIA VIRTUAL POR TAC MULTISLICE
 346178;COLONOSCOPIA POR TAC MULTISCLICE O ENDOSCOPIA O COLONOSCOPIA VIRTUAL
+;
 348001;Colangiografía Transparietohepática (Honorarios, materiales descartables y gastos)
 348002;Drenaje percutáneo de colección abdominal o torácica (Honorarios, gastos y material específico para el procedimiento)
 348003;Drenaje percutáneo de la Vía Biliar con o sin colocación de stent (Honorarios, gastos y material específico para el procedimiento. Excluye stent)
@@ -2109,7 +2564,15 @@ Multifrecuenciales"
 348010;Colocación catéter con control tomográfico (Excl. catéter)
 348011;Punción módulo simple multicorte
 348012;Punción módulo complejo multicorte
+;
+;
+;
+;
 ;Radioterapia
+;
+;
+;
+;
 ;Oncologia
 355001;Quimioterapia Endovenosa por sesion ( honorarios medicos y gastos, excluye pension y medicacion)
 355002;Quimioterapia Intratecal  por sesion ( honorarios medicos y gastos, excluye pension y medicacion)
@@ -2122,6 +2585,14 @@ Multifrecuenciales"
 355009;Mód. quimioterapia endovesical - Por sesión
 355010;MÓDULO ONCOLÓGICO AMBULATORIO ESTANCIA LARGA
 355011;MÓDULO ONCOLÓGICO AMBULATORIO ESTANCIA CORTA
+355012;MODULO DE QUIMIOTERAPIA CORTO - SIN CATETER PORTAL
+355013;MODULO DE QUIMIOTERAPIA CORTO-CON CATETER PORTAL
+355014;INFUS.DE CITOSTAT./QUIMIOTERAPIA
+355015;MODULO SBRT
+355016;MODULO RC RADIOCIRUGIA ESTEREOTAXICA
+355017;RADIOTERAPIA CONFORMACIONAL 3D DE MAMA 
+355018;RADIOTERAPIA MODULO TBI
+355019;MODULO DE ONCOHEMATOLOGIA PEDIATRICA -
 ;Urologia
 365001;Uretrocistofibroscopia con videoscopia
 365002;Estudio  Urodinámico Completo
@@ -2150,6 +2621,12 @@ Multifrecuenciales"
 365033;ONDAS CHOQUE P/DISFUNC.ERECTIL
 365034;INSTILACION INTRACAVITAR C/QMT
 365035;EST. METABOL.DE LITIASIS RENAL II
+365036;LASER TERAPIA ENF UROLOGICAS
+365037;RIGISCAN
+365038;FLUJOMETRIA C/ECO  POST MICCIONAL
+365039;CISTOURETROGRAFIA  (complejidad especial)
+365040;PIELOURETROGRAFIA RENAL/PIELOGRAFIA  (complejidad especial)
+;
 ;Urologia Pediatrica
 365021;VIDEOURODINAMIA PED.C/EMG PER.
 365022;ECOFLUJOMETRIA PED.CON EMG PER
@@ -2157,10 +2634,19 @@ Multifrecuenciales"
 365024;BIOFEEDBACK URIN. PED.P/SESION
 365025;FLUJOMETRIA PED+ELECT.PERIANAL
 365026;VIDEOURODINAMIA PEDIATRICA    
+365041;ENTRENAMIENTO EN CATETERISMO INTERMITENTE LIMPIO (CIL) SEGUIMIENTO Y EVALUACION PERIODICA 
+;
+;
 ;Sindromes Clinicos
-375001;sd
+375001;
+;
+;
 ;Tratamientos especiales
-385001;sd
+385001;HIV-Módulo A + B1:
+385002;HIV-Módulo A + B2
+385003;HIV-Módulo C Etravirina
+385004;HIV-Módulo C Dolutegravir 
+;
 ;Curaciones en Quemados
 435001;Módulo curación quemado leve - Ambulatorio
 435002;Módulo curación quemado leve
@@ -2191,6 +2677,7 @@ Multifrecuenciales"
 435026;Módulo C
 435027;Módulo D
 435028;Módulo E
+;
 ;Procedimientos terapéuticos
 808080;HEPARINIZACION DE CATETER     
 808081;TTO.ANTIBIOTICOTERAPICO       
@@ -2198,6 +2685,7 @@ Multifrecuenciales"
 808084;Lavado y/o mantenimiento de catéter implantable
 808085;TRATAMIENTO PARENTERAL AMBUL. LARGO
 808086;TRATAMIENTO PARENTERAL LEVOSIMENDAN
+;
 ;Cirugía Cabeza y Cuello
 800101;Mód. Cirugía de Cabeza y Cuello - I
 800102;Mód. Cirugía de Cabeza y Cuello - II
@@ -2205,6 +2693,12 @@ Multifrecuenciales"
 800104;Mód. Cirugía de Cabeza y Cuello - IV
 800105;Mód. Cirugía de Cabeza y Cuello - V
 800106;Mód. Cirugía de Cabeza y Cuello - VI
+800107;Mód. Cirugía de Cabeza y Cuello - VII
+800108;MODULO QUIRURGICO   PEDIATRICO COMPLEJIDAD II -  CABEZA Y CUELLO
+800109;MODULO QUIRURGICO   PEDIATRICO COMPLEJIDAD III -  CABEZA Y CUELLO
+800110;MODULO QUIRURGICO   PEDIATRICO COMPLEJIDAD IV -  CABEZA Y CUELLO
+800111;MODULO QUIRURGICO   PEDIATRICO COMPLEJIDAD V -  CABEZA Y CUELLO
+;
 ;Cirugía Maxilo Facial
 800201;Mód. I Cirugía Ortognática
 800202;Mód. II Cirugía Ortognática
@@ -2214,6 +2708,8 @@ Multifrecuenciales"
 800301;MÓDULO II -CIRUGÍA CRANEOMAXILOFACIAL
 800302;MÓDULO III -CIRUGÍA CRANEOMAXILOFACIAL
 800303;MÓDULO I - CIRUGÍA CRANEOMAXILOFACIAL
+800304;MÓDULO IV - CIRUGÍA CRANEOMAXILOFACIAL
+800305;MÓDULO V - CIRUGÍA CRANEOMAXILOFACIAL
 ;Traslados en Ambulancias
 445001;Ambulancia Común sin médico CABA
 445002;Ambulancia Común con médico CABA
@@ -2246,6 +2742,18 @@ Multifrecuenciales"
 445029;COMÚN CON MÉDICO- adicional por hora de espera
 445030;UTIM ADULTOS -Radio Urbano Interior
 445031;UTIM ADULTOS- adicional por hora de espera
+;
+;Internación Domiciliaria
+707001;MODULO PACIENTE BAJA COMPLEJIDAD
+707002;MODULO PACIENTE MEDIA COMPLEJIDAD
+707003;MODULO PACIENTE ALTA COMPLEJIDAD
+707004;MODULO PACIENTE ALTA COMPLEJIDAD/ARM
+;
+;
+;
+;
+;
+;
 ;Trasplantes
 ;Trasplante de Medula Osea
 800001;Obtencion y Crio Preservacion de Celulas Progenitoras
@@ -2262,6 +2770,13 @@ Multifrecuenciales"
 800020;TRASPLANTE ALLOGENICO DE MÉDULA ÓSEA PEDIÁTRICO
 800021;TRASPLANTE ALLOGÉNICO DE MÉDULA ÓSEA CON CORDÓN UMBILICAL
 800022;TRASPLANTE AUTÓLOGO DE MÉDULA ÓSEA PEDIÁTRICO
+;
+;
+;
+;
+;
+;
+;
  ;Trasplante Renal
 800008;Pre Tx Renal Donante cadaverico 
 800009;Pre Tx Renal Donante Vivo Receptor y Dador 
@@ -2280,20 +2795,44 @@ Multifrecuenciales"
 800030;BIOPSIA RENAL CON CONTROL ECOGRÁFICO
 800065;TRASPLANTE HEPATO-RENAL CON DONANTE CADAVÉRICO
 800068;Transplantectomía Renal
+800070;TRANSPLANTE RENAL CON DONANTE VIVO RELACIONADO POR VIA LAPAROSCOPICA
+800071;MODULO TRANSPLANTE ABO INCOMPATIBLE
+;
+ ; 
 ;Trasplante Cardíaco
 800031;EVALUACIÓN TRASPLANTE CARDÍACO
 800032;TRASPLANTE CARDÍACO
 800033;BIOPSIA ENDOMIOCÁRDICA POS TRASPLANTE
 800069;EVALUACIÓN POS TRASPLANTE CARDÍACO
+;
+;
+;
+;
 ;Trasplante Pulmonar
 800034;EVALUACIÓN TRASPLANTE PULMONAR
 800035;TRASPLANTE UNIPULMONAR
 800036;TRASPLANTE BIPULMONAR
 800037;BIOPSIA PULMONAR POS TRASPLANTE
+;
+;
+; 
+;
+;
+;
+;
+;
+;
+;
+;
 ;Trasplante Cardiopulmonar
 800038;EVALUACIÓN TRASPLANTE CARDIOPULMONAR
 800039;TRASPLANTE CARDIOPULMONAR
 800040;BIOPSIA CARDIOPULMONAR POS TRASPLANTE
+;
+;
+;
+;
+;
 ;Trasplante Hepático
 800041;EVALUACIÓN PRE TRASPLANTE HEPÁTICO ADULTO
 800042;EVALUACIÓN PRE TRASPLANTE HEPÁTICO PEDIÁTRICO
@@ -2308,10 +2847,17 @@ Multifrecuenciales"
 800051;MÓDULO DE SEGUIMIENTO POS TRASPLANTE HEPÁTICO
 800052;MÓDULO DE SEGUIMIENTO POS TRASPLANTE HEPÁTICO PEDIÁTRICO
 800053;ESTUDIOS ANUALES POS TRASPLANTE HEPÁTICO
+;
+;
 ;Trasplante Páncreas
 800054;EVALUACIÓN TRASPLANTE PÁNCREAS AISLADO
 800055;EVALUACIÓN TRASPLANTE RIÑÓN-PÁNCREAS
 800056;TRASPLANTE PÁNCREAS AISLADO
+;
+;
+;
+;
+;
 ;Trasplante Intestinal y/o  Multiorgánico
 800057;EVALUACIÓN TRASPLANTE DE INTESTINO ADULTO AISLADO
 800058;EVALUACIÓN TRASPLANTE MULTIORGÁNICO ADULTO
@@ -2325,12 +2871,15 @@ Multifrecuenciales"
 800067;Transplantectomía Multiorgánica
 ;Trasplante de Cornea
 800015;Modulo de Trasplante de Cornea
+800072;Modulo de Trasplante de Cornea Bilateral
+;
 ;Medicamentos y Material Descartable
 990001;Medicamentos  
 990002;Material Descartable
 990003;Oxigeno
 990004;MATERIAL DESCARTABLE  COVID EN UTI
 ;Listado laboratorio No Nomenclado
+Código;Descripción
 680001;3-Metoxitiramina en orina de 24 hs
 680002;3-Metoxitiramina en plasma
 680003;54 ALIMENTOS PANEL AC. IGG
@@ -2947,10 +3496,15 @@ Multifrecuenciales"
 680615;Determinación de especificidad de anticuerpos anti HLA clase I o  II c/Título por diluciones
 680616;Patogenos de meningo encefalitis panel DNA/RNA por PCR
 680617;Sinergia ATB Cualitativa
+680618;Orina 24 hs.
+680619;TSH ultrasensible
+680620;Ac antitiroglobulina ultrasensible
 684201;INFORME DEL HEMATOLOGO
 684272;EC - EXTRACCIONES DOMICILIARIAS CABA
 684273;Toma Muestra Domicilio
 684274;Toma Muestra Sede
+684275;Control de concentrados de factor viii kogenate 1000
+684276;Control de concentrados de factor viii kogenate 1000
 689900;FRASCO A
 689901;MAT DESCARTABLE MF
 689902;MAT DESCARTABLE UROC

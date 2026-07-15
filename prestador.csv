@@ -1,4 +1,576 @@
 codigo_c;PRESTACIONES ;valor;codigo;Nomenclador;Clasificación;Coseguro
+1100000;MÓDULO PISO PEDIATRÍA;515528,33;437017;N OSMISS;ALTA;0
+1100001;MÓDULO OBSERVACIÓN PEDIATRÍA;372030,75;437006;N OSMISS;ALTA;0
+1100002;MÓDULO ONCOLÓGICO PEDIÁTRICO;1275534,00;355010;N OSMISS;ALTA;0
+1100003;MÓDULO NEUROONCOLÓGICO PEDIÁTRICO;1275534,00;355010;N OSMISS;ALTA;0
+1100004;MÓDULO HOSPITAL DE DÍA ONCOLÓGICO;690914,25;426001;N OSMISS;ALTA;0
+1100005;MÓDULO INMUNO/HEMATOLÓGICO;936130,83;426007;N OSMISS;ALTA;0
+1100006;MÓDULO COVID 19;561373,02;437039;N OSMISS;ALTA;0
+1100007;MÓDULO QUEMADOS - GRUPO I;854935,81;435024;N OSMISS;ALTA;0
+1100008;MÓDULO QUEMADOS - GRUPO II;986280,70;435025;N OSMISS;ALTA;0
+1100009;MÓDULO QUEMADOS - GRUPO III;1275534,00;435026;N OSMISS;ALTA;0
+1100010;MÓDULO QUEMADOS- GRUPO IV;1700712,00;435027;N OSMISS;ALTA;0
+1100011;MÓDULO DIABETES INFANTIL;733432,05;426011;N OSMISS;ALTA;0
+1100012;MÓDULO PSIQUIATRÍA INFANTIL;733432,05;;;;
+1100013;MÓDULO UTIP;1254275,10;407004;N OSMISS;ALTA;0
+1100014;MÓDULO DE INTERNACIÓN C.I.R.E.N.A SIN ARM;956650,50;407001;N OSMISS;ALTA;0
+1100015;MÓDULO DE INTERNACIÓN C.I.R.E.N.A. CON ARM;1201127,85;407002;N OSMISS;ALTA;0
+1100016;MÓDULO UTIN;1254275,10;407051;N OSMISS;ALTA;0
+1100017;MÓDULO NEONATOLOGÍA RECUPERACIÓN NUTRICIONAL;733432,05;407060;N OSMISS;ALTA;0
+1100018;MÓDULO NEONATOLOGÍA LUMINOTERAPIA;733432,05;407061;N OSMISS;ALTA;0
+1100019;MÓDULO UTIN MUY BAJO PESO;1434975,75;407062;N OSMISS;ALTA;0
+1100020;MÓDULO PISO OBSTETRICIA;515528,33;437009;N OSMISS;ALTA;0
+1100021;MÓDULO OBSERVACIÓN OBSTETRICIA;372030,75;437006;N OSMISS;ALTA;0
+1100022;MÓDULO PARTO;1807006,50;110401;NN;ALTA;0
+1100023;MÓDULO CESÁREA;3029393,25;110403;NN;ALTA;0
+1100024;MÓDULO EMBARAZO ECTÓPICO;1217925,32;118026;N OSMISS;ALTA;0
+1100025;MÓDULO LEGRADO/AMEU;1194044,43;110210;NN;ALTA;0
+1100026;MÓDULO DE ANTICONCEPCION DEFINITIVA/LIGADURA DE TROMPAS POST PARTO;1463675,27;110101;NN;ALTA;0
+1100027;MÓDULO INTERRUPCIÓN VOLUNTARIA DEL EMBARAZO;1392282,61;118010;N OSMISS;ALTA;0
+1100028;MÓDULO UTI/UCO;1012577,60;407022;N OSMISS;ALTA;0
+1100029;SUSPENSIÓN DE CIRUGÍA/INTERNACIÓN PROGRAMADA POR CAUSAS AJENAS A LA PRESTADORA;227863,48;;;;
+1100030;CIRUGÍA GENERAL INFANTIL - MÓDULO A;869264,34;808093;N OSMISS;ALTA;20000
+1100031;CIRUGÍA GENERAL INFANTIL - MÓDULO B;1770170,87;808094;N OSMISS;ALTA;0
+1100032;CIRUGÍA GENERAL INFANTIL - MÓDULO C;2278299,60;808095;N OSMISS;ALTA;0
+1100033;CIRUGÍA GENERAL INFANTIL - MÓDULO D;2960334,65;808096;N OSMISS;ALTA;0
+1100034;CIRUGÍA GENERAL INFANTIL - MÓDULO E;1,00;1;1;;
+1100035;CIRUGÍA GENERAL INFANTIL - MÓDULO F;1,00;1;1;;
+1100036;CIRUGÍA PLÁSTICA INFANTIL - MÓDULO A;832845,99;138004;N OSMISS;MEDIA;15000
+1100037;CIRUGÍA PLÁSTICA INFANTIL - MÓDULO B;1546830,28;138022;N OSMISS;MEDIA;15000
+1100038;CIRUGÍA PLÁSTICA INFANTIL - MÓDULO C;2606374,75;138023;N OSMISS;ALTA;0
+1100039;CIRUGÍA PLÁSTICA INFANTIL - MÓDULO D;3608826,57;800301;N OSMISS;ALTA;0
+1100040;CIRUGÍA PLÁSTICA INFANTIL - MÓDULO E;1,00;1;1;;
+1100041;TRAUMATOLOGÍA Y ORTOPEDIA INFANTIL - MÓDULO A;832845,99;128078;N OSMISS;ALTA;20000
+1100042;TRAUMATOLOGÍA Y ORTOPEDIA INFANTIL - MÓDULO B;1583873,89;128079;N OSMISS;ALTA;20000
+1100043;TRAUMATOLOGÍA Y ORTOPEDIA INFANTIL - MÓDULO C;3007355,48;128080;N OSMISS;ALTA;0
+1100044;TRAUMATOLOGÍA Y ORTOPEDIA INFANTIL - MÓDULO D;4410788,03;128081;N OSMISS;ALTA;0
+1100045;TRAUMATOLOGÍA Y ORTOPEDIA INFANTIL - MÓDULO E;1,00;1;1;;
+1100078;ENDOSCOPIA RESPIRATORIA - MÓDULO A;1122746,05;285034;N OSMISS;ALTA;20000
+1100079;ENDOSCOPIA RESPIRATORIA - MÓDULO B;1703423,78;285035;N OSMISS;ALTA;20000
+1100080;ODONTOPEDIATRÍA - MÓDULO A;1443530,63;;;;
+1100081;ODONTOPEDIATRÍA - MÓDULO B;1563824,85;;;;
+1100082;ODONTOPEDIATRÍA - MÓDULO C;1951665,62;;;;
+1100083;ODONTOPEDIATRÍA - MÓDULO D;2506129,57;;;;
+1100084;CIRUGÍA OFTALMOLÓGICA - MÓDULO A;1403002,20;028001;N OSMISS;MEDIA;15000
+1100085;CIRUGÍA OFTALMOLÓGICA - MÓDULO B;1698528,20;028002;N OSMISS;MEDIA;15000
+1100086;CIRUGÍA OFTALMOLÓGICA - MÓDULO C;2595748,76;028003;N OSMISS;ALTA;20000
+1100087;CIRUGÍA OFTALMOLÓGICA - MÓDULO D;1,00;1;1;;
+1100088;CIRUGÍA ORL - MÓDULO A;1002451,83;038006;N OSMISS;ALTA;20000
+1100089;CIRUGÍA ORL - MÓDULO B;1403002,20;038007;N OSMISS;ALTA;20000
+1100090;CIRUGÍA ORL - MÓDULO C;1862709,31;038008;N OSMISS;ALTA;20000
+1100091;CIRUGÍA ORL - MÓDULO D;2598240,68;038009;N OSMISS;ALTA;20000
+1101001;Adicional acompañante;90350,33;430106;NN;ALTA;0
+1101002;Adicional bomba de infusión;148812,30;070680;N OSMISS;ALTA;0
+1101004;Adicional ARM;259066,40;407003;N OSMISS;ALTA;0
+1101005;Adicional VAFO;372030,75;437063;N OSMISS;ALTA;0
+1101006;Adicional oxido nítrico;1,00;;;;
+1101007;Adicional neonato  hipercrítico;560767,20;407058;N OSMISS;ALTA;0
+1101009;Adicional laparoscopia;531472,50;508016;N OSMISS;ALTA;0
+1101011;Adicional parto/cesárea  de alto riesgo;788265,52;118035;N OSMISS;ALTA;0
+1101012;Adicional ligadura de trompas intracesarea;620627,52;118025;N OSMISS;ALTA;0
+1101015;Adicional cuidados paliativos;313143,37;426012;N OSMISS;ALTA;0
+1101017;Adicional asistencia integral  del neonato prematuro;438903,76;407055;N OSMISS;ALTA;0
+1101018;Adicional egreso del niño prematuro;476631,87;407054;N OSMISS;ALTA;0
+1102001;Colocación catéter de hemodiálisis o catéteres percutáneos.;1,00;;;;
+1102002;Colocación de catéter de diálisis peritoneal;627544,34;275001;N OSMISS;ALTA;0
+1102005;Colocación de acceso vascular implantable/semimplantable.;913020,42;078125;N OSMISS;ALTA;0
+1102009;Drenaje pleural.;377980,96;050407;NN;ALTA;0
+1102011;Reducción de parafimosis.;259066,40;100711;NN;MEDIA;15000
+1102013;Extracción manual de fecaloma/desimpactación.;327605,81;080526;NN;MEDIA;15000
+1102014;Biopsia de medula ósea.;134563,62;235002;N OSMISS;MEDIA;0
+1102016;Punción aspiración de médula ósea.;124502,78;235001;N OSMISS;ALTA;0
+1102017;Punción lumbar diagnóstica.;124502,78;010309;NN;ALTA;0
+1102018;Punción lumbar terapéutica con pasaje de medicación.;187382,98;185040;N OSMISS;ALTA;0
+1102020;Crioprecipitados.;191102,10;245022;N OSMISS;ALTA;0
+1102021;Plasmaféresis.;1,00;;;;
+1102022;Transfusión de glóbulos rojos.;191102,10;240101;NN;ALTA;0
+1102023;Transfusión de glóbulos rojos irradiados y filtrados.;259066,40;245033;N OSMISS;ALTA;0
+1102024;Transfusión de plaquetas.;191102,10;240107;NN;ALTA;0
+1102025;Transfusión de plaquetas irradiadas y filtradas.;274157,65;245027;N OSMISS;ALTA;0
+1102026;Transfusión de plasma.;191102,10;240102;NN;ALTA;0
+1102027;Interconsulta con Alergista.;47331,64;425033;N OSMISS;BAJA;20000
+1102028;Interconsulta con Cardiología.;47331,64;425033;N OSMISS;BAJA;20000
+1102029;Interconsulta con Cirugía cardiovascular.;47331,64;425033;N OSMISS;BAJA;20000
+1102030;Interconsulta con Cirugía endovascular.;47331,64;425033;N OSMISS;BAJA;20000
+1102031;Interconsulta con Cirugía general.;47331,64;425033;N OSMISS;BAJA;20000
+1102032;Interconsulta con Cirugía plástica.;47331,64;425033;N OSMISS;BAJA;20000
+1102033;Interconsulta con Cirujano de tórax.;47331,64;425033;N OSMISS;BAJA;20000
+1102034;Interconsulta con Cirujano maxilofacial.;47331,64;425033;N OSMISS;BAJA;20000
+1102035;Interconsulta con Dermatología.;46016,87;425035;N OSMISS;BAJA;20000
+1102036;Interconsulta con Diabetes gestacional.;55877,63;425067;N OSMISS;BAJA;20000
+1102037;Interconsulta con Diabetología.;75927,83;425043;N OSMISS;BAJA;20000
+1102038;Interconsulta con Electrofisiología.;47331,64;425033;N OSMISS;BAJA;20000
+1102039;Interconsulta con Endocrinología.;47331,64;425033;N OSMISS;BAJA;20000
+1102040;Interconsulta con Endoscopia respiratoria.;86774,67;425042;N OSMISS;BAJA;20000
+1102041;Interconsulta con Fonoaudiología.;47331,64;425033;N OSMISS;BAJA;20000
+1102042;Interconsulta con Gastroententerología.;47331,64;425033;N OSMISS;BAJA;20000
+1102043;Interconsulta con Genética.;86774,67;425042;N OSMISS;BAJA;20000
+1102044;Interconsulta con Ginecología;47331,64;425033;N OSMISS;BAJA;20000
+1102045;Interconsulta con Hematología.;47331,64;425033;N OSMISS;BAJA;20000
+1102046;Interconsulta con Hepatología.;86774,67;425042;N OSMISS;BAJA;20000
+1102047;Interconsulta con Infectología.;47331,64;425033;N OSMISS;BAJA;20000
+1102048;Interconsulta con Inmunología.;86774,67;425042;N OSMISS;BAJA;20000
+1102050;Interconsulta con Metabolopatías.;1,00;;;;
+1102051;Interconsulta con Nefrología.;47331,64;425033;N OSMISS;BAJA;20000
+1102052;Interconsulta con Neumología.;47331,64;425033;N OSMISS;BAJA;20000
+1102053;Interconsulta con Neurocirugía.;47331,64;425033;N OSMISS;BAJA;20000
+1102054;Interconsulta con Neurointervencionismo.;86774,67;425042;N OSMISS;BAJA;20000
+1102055;Interconsulta con Neurología.;47331,64;425033;N OSMISS;BAJA;20000
+1102056;Interconsulta con Neurooncología.;86774,67;425042;N OSMISS;BAJA;20000
+1102057;Interconsulta con Nutrición.;47331,64;425033;N OSMISS;BAJA;20000
+1102058;Interconsulta con Odontología.;47331,64;425033;N OSMISS;BAJA;20000
+1102059;Interconsulta con Oftalmología.;37602,36;425054;N OSMISS;BAJA;20000
+1102060;Interconsulta con Oncología.;86774,67;425042;N OSMISS;BAJA;20000
+1102061;Interconsulta con Oncohematología.;86774,67;425042;N OSMISS;BAJA;20000
+1102063;Interconsulta con Ortopedia y Traumatología.;47331,64;425033;N OSMISS;BAJA;20000
+1102064;Interconsulta con Otorrinolaringología.;47331,64;425033;N OSMISS;BAJA;20000
+1102065;Interconsulta con Psicopatolología en familiar de paciente internado.;47331,64;;;;
+1102066;Interconsulta con Psicopatología.;47331,64;;;;
+1102067;Interconsulta con Psiquiatría.;100036,67;;;;
+1102068;Interconsulta con Reumatología.;86774,67;425042;N OSMISS;BAJA;20000
+1102069;Interconsulta con Tocoginecología infantil.;47331,64;425033;N OSMISS;BAJA;20000
+1102070;Interconsulta con Traumatología especialista en columna.;47331,64;425033;N OSMISS;BAJA;20000
+1102071;Interconsulta con Urología.;47331,64;425033;N OSMISS;BAJA;20000
+1102074;Blink refiex.;313143,37;295039;N OSMISS;ALTA;20000
+1102075;Electroencefalograma (EEG)  ;307945,38;290101;NN;BAJA;10000
+1102076;Electromiogramas anal/facial/diafragmático.;710985,00;295032;N OSMISS;MEDIA;15000
+1102077;Electromiogramas de 4 miembros.;999822,66;295034;N OSMISS;MEDIA;15000
+1102079;Estudio computado de la coherencia cerebral.;250263,17;295042;N OSMISS;ALTA;20000
+1102080;Estudio de la respuesta “F” en 4 miembros.;329492,22;295080;N OSMISS;MEDIA;15000
+1102081;Estudio electrofisiológico del temblor.;409978,87;295062;N OSMISS;;
+1102082;Estudio reflejo “H” en miembros inferiores.;409978,87;295049;N OSMISS;MEDIA;15000
+1102084;Mapeo cerebral computarizado con histograma de frecuencias.;259066,40;295041;N OSMISS;ALTA;20000
+1102085;Polisomnografía sin oximetría de pulso.;627137,55;295023;N OSMISS;ALTA;20000
+1102086;Polisomnografía con oximetría de pulso.;690914,25;295024;N OSMISS;ALTA;20000
+1102087;Polisomnografía con protocolo de epilepsia.;690914,25;295079;N OSMISS;ALTA;20000
+1102088;Polisomnografía con prueba de CPAP.;717487,88;295078;N OSMISS;ALTA;20000
+1102089;Potencial evocado cognitivo.;259066,40;295060;N OSMISS;ALTA;20000
+1102090;Potencial evocado motor de miembros superiores/inferiores.;645150,79;295013;N OSMISS;ALTA;20000
+1102091;Potencial evocado pudendo.;259066,40;295046;N OSMISS;ALTA;20000
+1102092;Potencial evocado somatosensitivo.;259066,40;295012;N OSMISS;ALTA;20000
+1102093;Potencial evocado somatosensitivo trigeminal.;313143,37;295045;N OSMISS;ALTA;20000
+1102094;Potenciales evocados auditivos.;217222,49;295010;N OSMISS;ALTA;20000
+1102098;Potenciales evocados visuales.;172205,99;295014;N OSMISS;ALTA;20000
+1102099;Prueba de estimulación repetitiva.;367220,33;295040;N OSMISS;ALTA;20000
+1102100;Reflejo bulbocavernoso.;189961,07;295113;N OSMISS;MEDIA;15000
+1102101;Videoelectroencefalograma digital 12 horas.;1,00;;;;
+1102102;Videoelectroencefalograma digital 24 horas.;1,00;;;;
+1102103;Videoelectroencefalograma digital 48 horas.;1,00;;;;
+1102107;Cauterización de epistaxis;61620,53;310115;NN;BAJA;10000
+1102108;Drenaje de oído unilateral;61622,59;030109;NN;BAJA;10000
+1102110;Extracción de cuerpo extraño en CAE;124502,78;310111;NN;BAJA;10000
+1102112;Taponaje anterior;61622,59;310112;NN;BAJA;10000
+1102113;Taponaje posterior;91805,08;310113;NN;BAJA;10000
+1102121;Drenaje de absceso superficial.;124502,78;138050;NN;MEDIA;15000
+1102124;Toilette de herida superficial.;250263,17;430201;NN;BAJA;10000
+1102125;Toilette de herida profunda.;438903,76;138042;N OSMISS;MEDIA;15000
+1102127;Espirometría.;60022,00;280102;N OSMISS;BAJA;10000
+1102128;Fondo de ojo.;40872,13;300104;N OSMISS;BAJA;10000
+1102129;Biopsia de piel.;88603,91;130108;N OSMISS;MEDIA;15000
+1102131;Fibrolaringoscopia en sala.;428842,92;315019;N OSMISS;ALTA;20000
+1102132;Amniocentesis guiada por ecografía;501783,95;180121;NN;BAJA;10000
+1102133;Punción guiada bajo ecografía ;543913,68;185031;N OSMISS;ALTA;20000
+1102003;Colocación catéter venoso central en paciente menor a 2500 gramos.;816184,92;078125;N OSMISS;ALTA;0
+1102004;Colocación catéter venoso central en paciente mayor 2500 gramos;734440,67;078231;N OSMISS;ALTA;0
+1102006;Colocación de sonda transpilórica/gastroyeyunal.;501783,95;205079;N OSMISS;ALTA;0
+1102007;Extracción de catéter.;409978,87;078129;N OSMISS;ALTA;0
+1102008;Pleurocentesis diagnóstica.;250263,17;050408;NN;BAJA;0
+1102010;Paracentesis.;323078,70;080212;NN;MEDIA;0
+1102012;Reducción manual de hernia inguinal atascada.;327605,81;088067;N OSMISS;ALTA;0
+1102015;Frotis de sangre periférica.;42758,53;235008;N OSMISS;MEDIA;15000
+1102049;Interconsulta con Manejo del dolor;47331,64;425033;N OSMISS;BAJA;20000
+1102062;Interconsulta con Oncoortopedista.;86774,67;425042;N OSMISS;BAJA;20000
+1102072;Punción de reservorio (VDVP). ;411595,88; 010214;N OSMISS;MEDIA;0
+1102073;Punción transfontanelar.;244958,77;010215;N OSMISS;MEDIA;0
+1102078;Electrorretinograma computado.;204360,63;305007;N OSMISS;ALTA;20000
+1102083;Mapeo cerebral computarizado.;438903,76;295008;N OSMISS;ALTA;20000
+1102095;Potenciales evocados auditivos con búsqueda de umbrales.;235514,91;295019;N OSMISS;ALTA;20000
+1102097;Potenciales evocados auditivos de tronco cerebral corta latencia.;217222,49;295018;N OSMISS;ALTA;20000
+1102109;Drenaje de otohematoma;91176,28;030105;NN;ALTA;20000
+1102111;Revisión de lecho amigdalino sangrante;61622,59;031302;NN;MEDIA;15000
+1102114;Artrocentesis;321946,59;120801;NN;BAJA;10000
+1102115;Tracción esquelética o de partes blandas;355273,10;121932;NN;MEDIA;15000
+1102116;Cambio de cánula de traqueotomía por especialista;68596,58;285017;N OSMISS;ALTA;0
+1102118;Curso oficial de RCP para padres avalado por la SAP.;112385,40;425065;N OSMISS;MEDIA;0
+1102122;Drenaje de hematoma subungueal.;124502,78;130114;NN;MEDIA;15000
+1102123;Sutura de herida bajo anestesia general.;267869,63;138044;N OSMISS;ALTA;20000
+1102130;Colocación de DIU bajo anestesia;166632,51;118029;N OSMISS;ALTA;20000
+1103005;Vacunas / Inyección.;8446,50;425050;N OSMISS;MEDIA;s/c  
+1103001;Colocación de sonda vesical.;49046,55;360103;NN;BAJA;10000
+1103002;Colocación/recambio de sonda nasogástrica.;49046,55;205055;NN;MEDIA;15000
+1103003;Colocación/recambio de botón gástrico o sonda Foley.;54705,77;205095;N OSMISS;MEDIA;15000
+1103004;Aplicación de medicamentos parenterales.;33327,42;808083;N OSMISS;MEDIA;15000
+1103005;Vacunas;8446,50;425050;N OSMISS;MEDIA;s/c 
+1103006;Nebulizaciones.;13936,73;430401;NN;BAJA;10000
+1103007;Toma de muestra de hisopados.;66654,84;684274;N OSMISS;MEDIA;s/c
+1103008;PCR SARS Cov-2. ;#¡VALOR!;NBU;NBU;NBU;NBU
+1103013;Consulta con Traumatología infantil. ;46112,14;425035;N OSMISS;BAJA;20000
+1103014;Colocación de yeso/férulas/valvas.;99350,71;120280;N OSMISS;MEDIA;15000
+1103015;Reducciones de fracturas y luxaciones.;242088,75;128078;N OSMISS;MEDIA;15000
+1103016;Consulta de guardia. ;44792,06;425020;N OSMISS;BAJA;20000
+1103017;Consulta con Cirugía general.;49046,55;425062;N OSMISS;BAJA;20000
+1103018;Drenaje de absceso superficial.;84888,26;130105;NN;MEDIA;15000
+1103019;Reducción de parafimosis.;91176,28;100711;NN;MEDIA;15000
+1103020;Consulta con Cirugía plástica.;49046,55;425062;N OSMISS;BAJA;20000
+1103021;Curación de paciente quemado. ;264725,62;435001;N OSMISS;MEDIA;15000
+1103022;Sutura de heridas pequeñas. ;70425,82;130110;NN;MEDIA;15000
+1103023;Sutura de heridas medianas. ;133309,69;138012;N OSMISS;MEDIA;15000
+1103024;Toilette de herida. ;40872,13;138042;N OSMISS;MEDIA;15000
+1103025;Electrocardiograma;29994,68;170101;NN;BAJA;10000
+1104001;Consulta adolescencia;42729,95;420101;NN;BAJA;20000
+1104002;Consulta alergista. ;42729,95;420101;NN;BAJA;20000
+1104003;Consulta cardiología. ;42729,95;420101;NN;BAJA;20000
+1104004;Consulta cirugía general ;42729,95;420101;NN;BAJA;20000
+1104005;Consulta cirugía plástica ;42729,95;420101;NN;BAJA;20000
+1104006;Consulta cirugía de tórax ;42729,95;420101;NN;BAJA;20000
+1104007;Consulta dermatología  ;42729,95;420101;NN;BAJA;20000
+1104008;Consulta diabetologa gestacional ;47989,02;420101;NN;BAJA;20000
+1104009;Consulta diabetologa pediátrica;75927,83;425043;N OSMISS;BAJA;20000
+1104010;Consulta electrofisiología;42729,95;420101;NN;BAJA;20000
+1104011;Consulta endocrinología ;42729,95;420101;NN;BAJA;20000
+1104012;Consulta endoscopía respiratoria ;86774,67;425042;N OSMISS;BAJA;20000
+1104013;Consulta especialista en transición;83159,06;425066;N OSMISS;BAJA;20000
+1104014;Consulta genética;86051,55;215007;N OSMISS;BAJA;20000
+1104015;Consulta ginecología;42729,95;420101;NN;BAJA;20000
+1104016;Consulta hematología ;42729,95;420101;NN;BAJA;20000
+1104017;Consulta hematoncología;55877,63;425067;N OSMISS;BAJA;20000
+1104018;Consulta hepatología ;121616,01;425065;N OSMISS;BAJA;20000
+1104019;Consulta infectología ;42729,95;420101;NN;BAJA;20000
+1104020;Consulta inmunología;101894,50;425065;N OSMISS;BAJA;20000
+1104021;Consulta nefrología ;42729,95;420101;NN;BAJA;20000
+1104022;Consulta neonatología;42729,95;420101;NN;BAJA;20000
+1104024;Consulta neumonología ;42729,95;420101;NN;BAJA;20000
+1104025;Consulta neurocirugía ;42729,95;420101;NN;BAJA;20000
+1104026;Consulta neuroespasticidad  ;57126,66;425067;N OSMISS;BAJA;20000
+1104027;Consulta neurología;47002,95;425042;N OSMISS;BAJA;20000
+1104028;Consulta neuroortopedia ;47002,95;425042;N OSMISS;BAJA;20000
+1104029;Consulta obstetricia ;42729,95;420101;NN;BAJA;20000
+1104030;Consulta obstetricia de alto riesgo ;56403,53;425067;N OSMISS;BAJA;20000
+1104031;Consulta oftalmología ;42729,95;420101;NN;BAJA;20000
+1104032;Consulta oncología;111360,82;425065;N OSMISS;BAJA;20000
+1104033;Consulta osteopatía adultos ;56403,53;425067;N OSMISS;BAJA;20000
+1104034;Consulta otorrinolaringología ;42729,95;420101;NN;BAJA;20000
+1104035;Consulta pediatría ;42729,95;420101;NN;BAJA;20000
+1104037;Consulta psiquiatría ;98607,58;;;;
+1104038;Consulta reumatología ;82435,93;425066;N OSMISS;BAJA;20000
+1104039;Consulta traumatología infantil ;42729,95;420101;NN;BAJA;20000
+1104040;Consulta traumatología infantil especialista en columna ;42729,95;420101;NN;BAJA;20000
+1104041;Consulta urología ;42729,95;420101;NN;BAJA;20000
+1104042;Consulta odontopediatría   ;52787,92;;;;
+1104043;Consulta nutrición ;42729,95;420101;NN;BAJA;20000
+1104044;Asistencia a parejas con diagnóstico prenatal de riesgo;61622,59;425057;N OSMISS;MEDIA;20000
+1104045;Asistencia psicológica Y acompañamiento del duelo  ;61622,59;;;;
+1104046;Consulta orientación a padres - crianza ;40872,13;420101;;;
+1104047;Consulta psicoprofilaxis quirúrgica ;30182,49;;;;
+1104048;Consulta psicoterapia;36470,51;;;;
+1104049;Evaluación psicopedagógica ;187382,98;;;;
+1104050;Orientación a padres en psicopedagogía ;40872,13;;;;
+1104051;Tratamiento psicopedagógico ;36470,51;;;;
+1104052;Control psicofarmacológico ;72312,22;;;;
+1104053;Consulta musicoterapia ;30811,30;;;;
+1104054;Consulta trabajo social ;42729,95;;;;
+1104056;Consulta fonoaudiología ;28581,91;315030;N OSMISS;BAJA;20000
+1104057;Consulta rehabilitación lenguaje y fonación ;40872,13;420101; ;;
+1104058;Biopsia dermatología infantil;55334,57;138007;N OSMISS;MEDIA;15000
+1104059;Curetaje dermatología infantil ;43890,38;138010;N OSMISS;MEDIA;15000
+1104060;Diagnóstico con luz de Wood dermatología infantil;40014,67;138051;N OSMISS;MEDIA;15000
+1104061;Topicaciones dermatología infantil;22865,53;138009;N OSMISS;MEDIA;15000
+1104062;Control marcapaso ;55334,57;175004;N OSMISS;MEDIA;15000
+1104063;Holter 2 canales ;135495,97;170118;NN;MEDIA;15000
+1104064;Holter 3 canales ;144998,28;175012;N OSMISS;MEDIA;15000
+1104065;Colocación de DIU ;177376,54;110217;NN;BAJA;10000
+1104066;Colposcopía y toma de muestra de PAP  ;36470,51;220101;NN;BAJA;10000
+1104067;Toma de muestra cultivo vaginal ;28296,09;225001;N OSMISS;MEDIA;15000
+1104068;Toma de muestra de biopsia cervical ;39174,36;225002;N OSMISS;MEDIA;15000
+1104069;Toma de muestra endometrial ;96835,50;110211;NN;MEDIA;15000
+1104070;Topicaciones ginecológicas;33955,30;110215;N OSMISS;MEDIA;15000
+1104071;Espirometría ;60022,00;280102;NN;MEDIA;15000
+1104072;Método psicoprofiláctico del parto ;188011,78;220203;NN;PMI;0
+1104073;Monitoreo fetal ;32194,66;220202;NN;PMI;0
+1104074;Electroencefalograma (EEG)  ;307945,38;290102;NN;BAJA;10000
+1104075;Polisomnografía digital diurna ;627137,55;295023;N OSMISS;ALTA;20000
+1104078;Campo visual ;41443,76;300102;NN;BAJA;10000
+1104079;Ecometría ;28581,91;305005;N OSMISS;MEDIA;15000
+1104080;Fondo de ojo ;40872,13;300104;NN;BAJA;10000
+1104081;Test de mirada preferencial ;20121,66;305039;N OSMISS;MEDIA;15000
+1104086;Rinofibrolaringoscopía ;186966,84;315019;N OSMISS;ALTA;20000
+1104089;Audiometría tonal ;40563,47;310102;NN;BAJA;10000
+1104090;Audiometría tonal por juegos ;62988,83;315002;N OSMISS;MEDIA;15000
+1104091;Impedanciometría ;40872,13;310109;NN;BAJA;10000
+1104092;Logo audiometría ;35212,91;310103;NN;BAJA;10000
+1104093;Otoemisiones acústicas ;96835,50;315013;N OSMISS;MEDIA;15000
+1104094;Potenciales evocados auditivos ;135192,42;295010;N OSMISS;ALTA;20000
+1104096;Prueba de selección de audífonos ;96835,50;310105;NN;BAJA;10000
+1104097;Pruebas supraliminares ;32886,34;310104;NN;BAJA;10000
+1104098;Timpanometría ;37602,36;315006;N OSMISS;MEDIA;15000
+1104101;Retiro de clavijas;117585,96;128078;N OSMISS;ALTA;20000
+1104102;Retiro de material de osteodesis;117585,96;128078;N OSMISS;ALTA;20000
+1104023;Consulta neonatología de alto riesgo;80200,83;425047;N OSMISS;BAJA;0
+1104036;Consulta prenatal Pediátrica ;56403,53;425067;N OSMISS;BAJA;0
+1104055;Consulta puericultura ;28581,91;;;;
+1104095;Potenciales evocados auditivos con búsqueda de umbrales ;187382,98;295011;N OSMISS;ALTA;20000
+1104103;Aplicación de toxina botulínica;250263,17;295077;N OSMISS;ALTA;20000
+1105001;PREQUIRÚRGICO;228083,61;425041;N OSMISS;BAJA;20000
+1105002;INGRESO ESCOLAR;265811,73;425064;N OSMISS;BAJA;20000
+1105003;APTO MÉDICO DEPORTIVO;265811,73;425058;N OSMISS;BAJA;20000
+1105005;MODULO PACIENTE BAJA COMPLEJIDAD;208907,75;707001;N OSMISS;ALTA;0
+1105006;MODULO PACIENTE MEDIA COMPLEJIDAD;309827,87;707002;N OSMISS;ALTA;0
+1105007;MODULO PACIENTE ALTA COMPLEJIDAD;828875,29;707003;N OSMISS;ALTA;0
+1105008;MODULO PACIENTE ALTA COMPLEJIDAD/ARM;943202,91;707004;N OSMISS;ALTA;0
+1105009;CONTROL RECIÉN NACIDO DE ALTO RIESGO;159441,75;325005;N OSMISS;BAJA;20000
+1106001;EVALUACIÓN FUNCIONAL INTEGRAL -EFI-;447706,98;295114;N OSMISS;ALTA;20000
+1106002;ADOS ;384826,79;335016;N OSMISS;ALTA;20000
+1106003;ADOS + ADIR;474116,66;335017;N OSMISS;ALTA;20000
+1106004;EVALUACIÓN DE INTEGRACIÓN SENSORIAL;259066,40;335012;N OSMISS;ALTA;20000
+1106005;EVALUACIÓN NEUROLINGUÍSTICA;321946,59;315034;N OSMISS;ALTA;20000
+1106006;EVALUACIÓN NEUROCOGNITIVA;274472,05;335008;N OSMISS;ALTA;20000
+1106007;TRATAMIENTO DE ESTIMULACIÓN TEMPRANA SIN CUD;441418,96;335007;N OSMISS;MEDIA;0
+1106008;TRATAMIENTO DE ESTIMULACIÓN TEMPRANA CON CUD;782858,42;255052;N OSMISS;MEDIA;0
+1106009;TRATAMIENTO FUNCIONAL INTEGRAL - MÓDULO SIMPLE;753304,73;255053;N OSMISS;MEDIA;20000
+1106010;TRATAMIENTO FUNCIONAL INTEGRAL - MÓDULO INTENSIVO;1249932,50;255055;N OSMISS;MEDIA;20000
+1107049;Centellograma óseo corporal total.;1,00;1;1;;
+1107050;Centellograma renal DMSA.;1,00;1;1;;
+1107063;Cistouretrografía miccional. ;1,00;1;1;;
+1107062;Colon por enema.;1,00;1;1;;
+1107029;Ecocardiograma doppler;179856,42;185058;N OSMISS;MEDIA;15000
+1107027;Ecocardiograma doppler fetal;380710,99;185101;N OSMISS;MEDIA;15000
+1107028;Ecocardiograma doppler fetal embarazo múltiple;480176,03;185106;N OSMISS;MEDIA;15000
+1107030;Ecocardiograma doppler transesofágico;807948,75;185067;N OSMISS;MEDIA;15000
+1107017;Ecografía 3D;133763,32;185017;N OSMISS;MEDIA;15000
+1107018;Ecografía 4D;174921,27;185113;N OSMISS;MEDIA;15000
+1107019;Ecografía 4D semana 28/32;207161,66;185014;N OSMISS;MEDIA;0
+1107001;Ecografía cerebral;49046,55;180107;NN;BAJA;10000
+1107003;Ecografía de abdomen;49046,55;180112;NN;BAJA;10000
+1107002;Ecografía de caderas;49046,55;185022;N OSMISS;MEDIA;15000
+1107004;Ecografía de partes blandas;49046,55;185024;N OSMISS;MEDIA;15000
+1107005;Ecografía de tiroides;49046,55;180110;NN;BAJA;10000
+1107033;Ecografía doppler color periférico;126903,66;185070;N OSMISS;MEDIA;15000
+1107034;Ecografía doppler de hígado  ;126903,66;185078;N OSMISS;MEDIA;15000
+1107035;Ecografía doppler de tiroides;126903,66;185062;N OSMISS;MEDIA;15000
+1107036;Ecografía doppler de vasos de cuello;140622,98;185059;N OSMISS;MEDIA;15000
+1107037;Ecografía doppler mesentérico;126903,66;185078;N OSMISS;MEDIA;15000
+1107024;Ecografía doppler obstétrica - embarazo múltiple;224859,57;185096;N OSMISS;MEDIA;0
+1107023;Ecografía doppler obstétrica - embarazo único;119220,85;185101;N OSMISS;MEDIA;0
+1107041;Ecografía doppler portal;140622,98;185081;N OSMISS;MEDIA;15000
+1107039;Ecografía doppler testicular;140622,98;185091;N OSMISS;MEDIA;15000
+1107032;Ecografía doppler uterina;126903,66;185100;N OSMISS;MEDIA;15000
+1107040;Ecografía doppler vena cava;140622,98;185080;N OSMISS;MEDIA;15000
+1107006;Ecografía ginecológica;49046,55;180104;NN;BAJA;10000
+1107008;Ecografía mamaria unilateral o bilateral;49046,55;180106;NN;BAJA;10000
+1107015;Ecografía muscular;49046,55;185024;N OSMISS;MEDIA;15000
+1107016;Ecografía obstétrica;58855,86;185014;N OSMISS;MEDIA;0
+1107022;Ecografía obstétrica con doppler fetal;151255,45;185101;N OSMISS;MEDIA;0
+1107013;Ecografía pelviana ;49046,55;185022;N OSMISS;MEDIA;15000
+1107014;Ecografía pilórica;49046,55;185019;N OSMISS;MEDIA;0
+1107009;Ecografía pleural o torácica;49046,55;180113;NN;BAJA;10000
+1107042;Ecografía renal con medición de residuo post miccional;60214,07;185113;N OSMISS;MEDIA;15000
+1107010;Ecografía renal y vía urinaria bilateral;49046,55;180116;NN;BAJA;10000
+1107011;Ecografía testicular;49046,55;180111;NN;BAJA;10000
+1107025;Ecografía translucencia nucal con bioquímica;224859,57;185015;N OSMISS;MEDIA;0
+1107026;Ecografía translucencia nucal sin bioquímica;151255,45;185016;N OSMISS;MEDIA;0
+1107007;Ecografía transvaginal;73947,11;185010;N OSMISS;MEDIA;15000
+1107012;Ecografía vesical;49046,55;180114;NN;BAJA;10000
+1107052;Estudio de la edad ósea.;54705,77;346006;N OSMISS;MEDIA;15000
+1107064;Estudio urodinámico.;#¡VALOR!;;;;
+1107054;Radiografía de abdomen.;28924,89;340421;NN;BAJA;10000
+1107056;Radiografía de columna.;36470,51;340209;NN;BAJA;10000
+1107053;Radiografía de tórax.;24523,28;340301;NN;BAJA;10000
+1107059;Radiografía medición comparativa de miembros.;52790,64;340214;NN;BAJA;10000
+1107047;Resonancia magnética por zona o región sin anestesia.;187382,98;346206;N OSMISS;ALTA;20000
+1107021;Scan fetal embarazo múltiple;168267,40;185013;N OSMISS;MEDIA;0
+1107020;Scan fetal embarazo único;105487,81;185104;N OSMISS;MEDIA;0
+1107043;Tomografía multislice sin anestesia.;201845,42;346130;N OSMISS;ALTA;20000
+1107051;Centellograma Meckel.;1,00;;;;
+1107038;Ecografía doppler de miembros inferiores ;140622,98;185073;185073;MEDIA;15000
+1107031;Ecografía doppler vasos renales;126903,66;185088;N OSMISS;MEDIA;15000
+1107055;Radiografía codo / antebrazo / muñeca / mano / dedo / rodilla / pierna / tobillo.;33326,50;340211;NN;BAJA;10000
+1107057;Radiografía cráneo / cara / senos paranasales o cavum.;36470,51;340201;NN;BAJA;10000
+1107058;Radiografía hombro / húmero / pelvis / cadera / fémur.;33326,50;340211;NN;BAJA;10000
+1107048;Resonancia magnética por zona o región con anestesia.;309353,13;346258;N OSMISS;ALTA;20000
+1107061;Seriada esofagogastroduodenal.;1,00;;;;
+1107060;Videodeglución. ;1,00;;;;
+1101003;Adicional aislamiento;0,60;;;;
+1101008;Adicional bilateralidad;0,60;;;;
+1101010;Adicional nacimientos múltiples;0,60;;;;
+1101013;Adicional urgencia;0,35;;;;
+1101014;Adicional neuroortopedia en módulos de Traumatología infantil.;0,35;;;;
+1101016;Adicional quemados en menores de dos años;0,40;;;;
+1102019;Aféresis.;1,00;;;;
+1102104;Videoelectroencefalograma digital 72 horas.;1,00;;;;
+1102119;Hemodiálisis.;1,00;;;;
+1102120;Diálisis peritoneal.;1,00;;;;
+1102096;Potenciales evocados auditivos de tronco cerebral.;1,00;;;;
+1102105;Videoelectroencefalograma con activación compleja.;1,00;;;;
+1102106;Videoelectroencefalograma de sueño prolongado.;1,00;;;;
+1102117;Colocación y/o recambio de VAC.;1,00;;;;
+1102126;Traslados en ambulancia.;1,00;;;;
+1104082;Test de Schimer;1,00;;;;
+1104099;Calibración de audífonos;1,00;;;;
+1105004;INTERNACIÓN DOMICILIARIA;1,00;;;;
+1107044;Tomografía multislice con anestesia.;284218,48;346185;N OSMISS;ALTA;20000
+1107045;Tomografía multislice con reconstrucción 3D sin anestesia.;250263,17;346322;N OSMISS;ALTA;20000
+1107046;Tomografía multislice con reconstrucción 3D con anestesia.;340810,65;346179;N OSMISS;ALTA;20000
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
+;;;;;;
 ;;;;;;
 ;;;;;;
 ;;;;;;
