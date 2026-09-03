@@ -621,6 +621,98 @@ def proceso_laboratorios():
 
 
 # ─────────────────────────────────────────────
+#  PROCESO 7: MAPEO SEMÁNTICO (SBERT)
+# ─────────────────────────────────────────────
+@st.cache_resource
+def cargar_modelo():
+    from sentence_transformers import SentenceTransformer
+    return SentenceTransformer('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
+
+def proceso_mapeo_semantico():
+    st.header('Mapeo Semántico (SBERT)')
+    st.markdown('Busca prácticas de `prestador.csv` en `NN.csv`, `NN_OSMISS.csv` y `NBU.csv` usando embeddings multilingües.')
+
+    f_prestador = st.file_uploader('prestador.csv',  type='csv', key='sb_prestador')
+    f_nn        = st.file_uploader('NN.csv',         type='csv', key='sb_nn')
+    f_osmiss    = st.file_uploader('NN_OSMISS.csv',  type='csv', key='sb_osmiss')
+    f_nbu       = st.file_uploader('NBU.csv',        type='csv', key='sb_nbu')
+    top_n       = st.slider('Resultados por práctica', 1, 10, 5, key='sb_topn')
+
+    if st.button('▶ Ejecutar', key='btn_semantico'):
+        if not all([f_prestador, f_nn, f_osmiss, f_nbu]):
+            st.warning('Cargá todos los archivos antes de ejecutar.')
+            return
+
+        with st.spinner('Cargando modelo SBERT (puede tardar la primera vez)...'):
+            modelo = cargar_modelo()
+
+        with st.spinner('Procesando...'):
+            prestador = leer_csv(f_prestador)
+            nn        = leer_csv(f_nn)
+            nn_osmiss = leer_csv(f_osmiss)
+            nbu       = leer_csv(f_nbu)
+
+            prestador['PRESTACIONES'] = prestador['PRESTACIONES'].str.strip()
+            nn['C\xf3digo Nomenclador'] = nn['C\xf3digo Nomenclador'].str.strip()
+            nn['Descripci\xf3n']        = nn['Descripci\xf3n'].str.strip()
+            nn_osmiss['Codigo']        = nn_osmiss['Codigo'].str.strip()
+            nn_osmiss['Descripcion']   = nn_osmiss['Descripcion'].str.strip()
+            nbu['CODIGO']              = nbu['CODIGO'].str.strip()
+            nbu['Determinaciones']     = nbu['Determinaciones'].str.strip()
+
+            # Construir corpus unificado con etiqueta de fuente
+            corpus = []
+            for _, r in nn.iterrows():
+                if pd.notna(r['Descripci\xf3n']) and pd.notna(r['C\xf3digo Nomenclador']):
+                    corpus.append({'fuente': 'NN', 'codigo': r['C\xf3digo Nomenclador'], 'descripcion': r['Descripci\xf3n']})
+            for _, r in nn_osmiss.iterrows():
+                if pd.notna(r['Descripcion']) and pd.notna(r['Codigo']):
+                    corpus.append({'fuente': 'N OSMISS', 'codigo': r['Codigo'], 'descripcion': r['Descripcion']})
+            for _, r in nbu.iterrows():
+                if pd.notna(r['Determinaciones']) and pd.notna(r['CODIGO']):
+                    corpus.append({'fuente': 'NBU', 'codigo': r['CODIGO'], 'descripcion': r['Determinaciones']})
+
+            textos_corpus = [c['descripcion'] for c in corpus]
+            practicas     = prestador['PRESTACIONES'].fillna('').tolist()
+
+            st.info('Generando embeddings del corpus (%d entradas)...' % len(textos_corpus))
+            emb_corpus = modelo.encode(textos_corpus, batch_size=64, show_progress_bar=False, convert_to_tensor=True)
+
+            st.info('Generando embeddings de prácticas (%d)...' % len(practicas))
+            emb_practicas = modelo.encode(practicas, batch_size=64, show_progress_bar=False, convert_to_tensor=True)
+
+            from sklearn.metrics.pairwise import cosine_similarity as cos_sim
+            import numpy as np
+            sims = cos_sim(emb_practicas.cpu().numpy(), emb_corpus.cpu().numpy())
+
+            filas = []
+            bar   = st.progress(0, text='Procesando resultados...')
+            total = len(practicas)
+
+            for i, practica in enumerate(practicas):
+                if not practica:
+                    continue
+                top_idx = np.argsort(sims[i])[::-1][:top_n]
+                for j in top_idx:
+                    filas.append({
+                        'Practica Prestador': practica,
+                        'Valor':             str(prestador.iloc[i].get('valor', '')),
+                        'Nomenclador':       corpus[j]['fuente'],
+                        'Codigo':            corpus[j]['codigo'],
+                        'Descripcion':       corpus[j]['descripcion'],
+                        'Similitud':         round(float(sims[i][j]), 4),
+                        'Estado':            'Encontrado' if sims[i][j] >= 0.5 else 'Baja similitud',
+                    })
+                bar.progress(int((i+1)/total*100), text='Práctica %d / %d' % (i+1, total))
+
+            df = pd.DataFrame(filas)
+            if df.empty:
+                st.warning('No se generaron resultados.')
+                return
+        mostrar_descargas(df, 'resultado_mapeo_semantico')
+
+
+# ─────────────────────────────────────────────
 #  NAVEGACIÓN SIDEBAR
 # ─────────────────────────────────────────────
 st.sidebar.image('https://img.icons8.com/color/96/hospital.png', width=80)
@@ -628,12 +720,13 @@ st.sidebar.title('Mapeo de\nNomenciadores Médicos')
 st.sidebar.markdown('---')
 
 procesos = {
-    '🏥 Mapeo Centro Médico':    proceso_mapeo,
-    '🏨 Sanatorio NN / N OSMISS': proceso_sanatorio_nn,
-    '🧪 NBU':                    proceso_nbu,
-    '🔬 Laboratorios NBU':       proceso_laboratorios_nbu,
-    '🧫 Laboratorios':           proceso_laboratorios,
-    '🔍 Mapeo General':          proceso_mapeo_general,
+    '🏥 Mapeo Centro Médico':      proceso_mapeo,
+    '🏨 Sanatorio NN / N OSMISS':   proceso_sanatorio_nn,
+    '🧪 NBU':                      proceso_nbu,
+    '🔬 Laboratorios NBU':         proceso_laboratorios_nbu,
+    '🧫 Laboratorios':             proceso_laboratorios,
+    '🔍 Mapeo General':            proceso_mapeo_general,
+    '🧠 Mapeo Semántico (SBERT)':  proceso_mapeo_semantico,
 }
 
 seleccion = st.sidebar.radio('Seleccionar proceso:', list(procesos.keys()))
