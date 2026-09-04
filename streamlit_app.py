@@ -636,7 +636,7 @@ def proceso_mapeo_semantico():
     f_nn        = st.file_uploader('NN.csv',         type='csv', key='sb_nn')
     f_osmiss    = st.file_uploader('NN_OSMISS.csv',  type='csv', key='sb_osmiss')
     f_nbu       = st.file_uploader('NBU.csv',        type='csv', key='sb_nbu')
-    top_n       = st.slider('Resultados por práctica', 1, 10, 5, key='sb_topn')
+    top_n       = st.slider('Resultados por práctica', 1, 10, 3, key='sb_topn')
 
     if st.button('▶ Ejecutar', key='btn_semantico'):
         if not all([f_prestador, f_nn, f_osmiss, f_nbu]):
@@ -701,7 +701,7 @@ def proceso_mapeo_semantico():
                         'Codigo':            corpus[j]['codigo'],
                         'Descripcion':       corpus[j]['descripcion'],
                         'Similitud':         round(float(sims[i][j]), 4),
-                        'Estado':            'Encontrado' if sims[i][j] >= 0.5 else 'Baja similitud',
+                        'Estado':            'Encontrado' if sims[i][j] >= 0.65 else 'Baja similitud',
                     })
                 bar.progress(int((i+1)/total*100), text='Práctica %d / %d' % (i+1, total))
 
